@@ -78,8 +78,6 @@
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -203,8 +201,10 @@
 </head>
 
     
+        <body class="home-body">
     
-<header class="header">
+    
+<header class="header index-header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,21 +220,34 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            油腻高贵的唐怂怂的🏠
+            <!-- 文章页  -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
+            
+            
+                做一个又用又有趣的人。
+            
+            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -346,239 +359,26 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">
+        <a class="abstract-title" href="/2014/09/21/2014-09-21-大理：一场风花雪月的事/">
             
-                <span>【Leetcode】33. Search in Rotated Sorted Array</span>
+                <span>大理：一场风花雪月的事</span>
         </a>
         <div class="abstract-content">
-            题目 搜索旋转数组假设按照升序排序的数组在预先未知的某个点上进行了旋转。
-( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。
-搜索一个给定的目标值，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。
-你可以假设数组中不存在重复的元素。
-你的算法时间复杂度必须是 O(log n) 级别。
-输入为非空字符串且只包含数字 1 和 0。
-案例示例 1:12输入: nums = [4,5,6,7,0,1,2], target = 0输出: 4
-示例 2:12输入: nums = [4,5,6,7,0,1,2], target = 3输出: -1...
+            <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=29777634&auto=0&height=66"></iframe><br>很多人知道大理这个地方，大概都与金庸的小说《天龙八部》有关。未到大理，这座想象中的古城或多或少会让人有关于生死大义、爱恨情仇的武侠幻想。这种感觉仿佛像是将要误入边陲一隅的桃花源，少了现代生活的喧嚣与紧张，剩下的只有这座与世隔绝的古城的林林总总。</p>
+<p>从丽江到大理，已是凌晨，火车站都显得有些僻静。偶有一两个旅店拉客的老板。经历过丽江和香格里拉不大愉快的消费经历，必定是对这些「上门推销」的人存在戒心的。但最后还是无奈于「夜已深、天微凉」，也就上了辆「贼车」了。</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/06</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2014/09/21</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="大理">大理</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/03/03/【Leetcode】67-Add-Binary/">
-            
-                <span>【Leetcode】67.Add Binary</span>
-        </a>
-        <div class="abstract-content">
-            题目 合并区间给定两个二进制字符串，返回他们的和（用二进制表示）。
-输入为非空字符串且只包含数字 1 和 0。
-案例示例 1:12输入: a = &quot;11&quot;, b = &quot;1&quot;输出: &quot;100&quot;
-示例 2:12输入: a = &quot;1010&quot;, b = &quot;1011&quot;输出: &quot;10101&quot;
-思路首先将当前的区间按照start从低到高排序，如果后面一个区间的start比前一个的end要大，那么两者是没有重复的，直接将第二个放到当前的结果中；否则就是存在重复的区间，那就将当前res中...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="easy">easy</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/25/【Leetcode】57-Insert-Interval/">
-            
-                <span>【Leetcode】57.Insert Interval</span>
-        </a>
-        <div class="abstract-content">
-            题目 合并区间给出一个无重叠的 ，按照区间起始端点排序的区间列表。在列表中插入一个新的区间，你需要确保列表中的区间仍然有序且不重叠（如果有必要的话，可以合并区间）。
-案例示例 1:12输入: intervals = [[1,3],[6,9]], newInterval = [2,5]输出: [[1,5],[6,9]]
-示例 2:123输入: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]输出: [[1,2],[3,10],[12,16]]解释: 这是因为新的区间 [4,8] 与 [3,5],[6,7]...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="难">难</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">
-            
-                <span>【Leetcode】56. Merge Intervals</span>
-        </a>
-        <div class="abstract-content">
-            题目 合并区间给出一个区间的集合，请合并所有重叠的区间。
-案例示例 1:123输入: [[1,3],[2,6],[8,10],[15,18]]输出: [[1,6],[8,10],[15,18]]解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
-示例 2:123输入: [[1,4],[4,5]]输出: [[1,5]]解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
-思路首先将当前的区间按照start从低到高排序，如果后面一个区间的start比前一个的end要大，那么两者是没有重复的，直接将第二个放到当前的结果中；否则就是存在重复的区间，那就将当前re...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="中等">中等</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/23/关于c-push-pop小命令的笔记小抄/">
-            
-                <span>关于c++ push ,pop小命令的笔记小抄</span>
-        </a>
-        <div class="abstract-content">
-            set 插入：insert;
-vector 插入：push_back; 删除：pop_back;
-queuemap 访问map的key 和 value 的时候，是m.second 或者 m.first  
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="c++习惯总结">c++习惯总结</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/23/leetcode之间的关系捋一捋/">
-            
-                <span>leetcode之间的关系捋一捋</span>
-        </a>
-        <div class="abstract-content">
-            组合类型
-Permutations47.
-
-39.40。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="知识点梳理">知识点梳理</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/21/【leetcode】36-Valid-Sudoku/">
-            
-                <span>【leetcode】36. Valid Sudoku</span>
-        </a>
-        <div class="abstract-content">
-            题目  有效的数独判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。
-
-数字 1-9 在每一行只能出现一次。
-数字 1-9 在每一列只能出现一次。
-数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
-
-
-数独部分空格内已填入了数字，空白格用 ‘.’ 表示。
-案例示例 1:
-输入:12345678910111213[  [&quot;5&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="中等">中等</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="游记">游记</a>
     
 </div>
             
@@ -587,8 +387,94 @@ Permutations47.
     
     <!-- paginator  -->
     
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+    
 </main>
             <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" alt="avatar" src="/avatar/ynggdttt.jpg">
+    <div class="profile-name">ynggdttt</div>
+    
+    <div class="profile-signature">
+        总有那风吹不散的认真。
+    </div>
+    
+    
+    <div class="profile-social">
+        
+    
+        
+            
+                <a href="mailto:tangliyuan@sjtu.edu.cn" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/ynggdttt" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/erweima.jpg">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//www.zhihu.com/people/darcy-47-1/activities" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    
+    
+        <div class="about-me">
+            <a href="/about">ABOUT ME</a>
+        </div>
+    
+</div>
             
         </div>
         <footer class="footer footer-unloaded">

@@ -406,7 +406,7 @@ height:50vh;
         <h1 id="题目-合并区间"><a href="#题目-合并区间" class="headerlink" title="题目 合并区间"></a>题目 合并区间</h1><p>给出一个无重叠的 ，按照区间起始端点排序的区间列表。<br>在列表中插入一个新的区间，你需要确保列表中的区间仍然有序且不重叠（如果有必要的话，可以合并区间）。</p>
 <h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: intervals = [[1,3],[6,9]], newInterval = [2,5]</span><br><span class="line">输出: [[1,5],[6,9]]</span><br></pre></td></tr></table></figure></p>
 <p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]</span><br><span class="line">输出: [[1,2],[3,10],[12,16]]</span><br><span class="line">解释: 这是因为新的区间 [4,8] 与 [3,5],[6,7],[8,10] 重叠。</span><br></pre></td></tr></table></figure></p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这个题和56题很像，唯一不同的就是是需要插入一个区间；<br>思考这样的一个问题，这个区间应该插在哪里，实际上应该插在，该区间的start比原区间数组中的某一个元素的start刚好大于或者等于的情况；<br>找到这个位置之后，就要考虑当前的插入区间是不是能直接插入还是需要和上一个区间合并，如果该区间的start比上一个区间的end要大的话，那么可以直接插入，或者还有一种特殊情况就是res中还没有区间，那么这两种情况都直接插入，否则的话就需要进行一次合并，合并的原则和56题一样，就是将当前res尾部的区间的end修改成插入区间的end和res尾部的end中的较大的值；然后再对剩余的区间依次做合并操作，最终得到结果；</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这个题和56题很像，唯一不同的就是是需要插入一个区间；<br>思考这样的一个问题，这个区间应该插在哪里，实际上应该插在，该区间的start比原区间数组中的某一个元素的start刚好大于或者等于的情况；<br>找到这个位置之后，就要考虑当前的插入区间是不是能直接插入还是需要和上一个区间合并，如果该区间的start比上一个区间的end要大的话，那么可以直接插入，或者还有一种特殊情况就是res中还没有区间，那么这两种情况都直接插入，否则的话就需要进行一次合并，合并的原则和<a href="https://ynggdttt.github.io/2019/02/24/%E3%80%90Leetcode%E3%80%9156-Merge-Intervals/" target="_blank" rel="noopener">56题</a>一样，就是将当前res尾部的区间的end修改成插入区间的end和res尾部的end中的较大的值；然后再对剩余的区间依次做合并操作，最终得到结果；</p>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for an interval.</span></span><br><span class="line"><span class="comment"> * struct Interval &#123;</span></span><br><span class="line"><span class="comment"> *     int start;</span></span><br><span class="line"><span class="comment"> *     int end;</span></span><br><span class="line"><span class="comment"> *     Interval() : start(0), end(0) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     Interval(int s, int e) : start(s), end(e) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;Interval&gt; insert(<span class="built_in">vector</span>&lt;Interval&gt;&amp; intervals, Interval newInterval) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;Interval&gt; res;</span><br><span class="line">        <span class="keyword">int</span> n = intervals.size();</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>) </span><br><span class="line">        &#123;</span><br><span class="line">            res.push_back(newInterval);</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>( ; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(newInterval.start &lt;= intervals[i].start)</span><br><span class="line">                <span class="keyword">break</span>;   </span><br><span class="line">            res.push_back(intervals[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">0</span> || newInterval.start &gt; intervals[i - <span class="number">1</span>].end)</span><br><span class="line">            res.push_back(newInterval);</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            res.back().end = max(newInterval.end, res.back().end);</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">for</span>(; i &lt; n; i++)&#123;</span><br><span class="line">             <span class="keyword">if</span>(res.back().end &lt; intervals[i].start)</span><br><span class="line">                 res.push_back(intervals[i]);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">               res.back().end = max(res.back().end, intervals[i].end);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </article>
@@ -415,6 +415,11 @@ height:50vh;
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/03/03/【Leetcode】67-Add-Binary/" title="【Leetcode】67.Add Binary">
+                    <div class="nextTitle">【Leetcode】67.Add Binary</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -670,9 +675,15 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -685,6 +696,16 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href="/2019/03/03/【Leetcode】67-Add-Binary/">【Leetcode】67.Add Binary</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -722,12 +743,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/14</span><a class="archive-post-title" href="/2018/12/14/2018-12-14-test2/">test2</a>
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href="/2018/12/14/2018-12-14-test/">test</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/14</span><a class="archive-post-title" href="/2018/12/14/2018-12-14-test/">test</a>
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href="/2018/12/14/2018-12-14-test2/">test2</a>
         </li>
     
     
@@ -754,27 +775,31 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="微信"><span class="iconfont-archer">&#xe606;</span>微信</span>
-    
-        <span class="sidebar-tag-name" data-tags="社交网络"><span class="iconfont-archer">&#xe606;</span>社交网络</span>
-    
         <span class="sidebar-tag-name" data-tags="hehe"><span class="iconfont-archer">&#xe606;</span>hehe</span>
     
         <span class="sidebar-tag-name" data-tags="haha"><span class="iconfont-archer">&#xe606;</span>haha</span>
     
-        <span class="sidebar-tag-name" data-tags="大理"><span class="iconfont-archer">&#xe606;</span>大理</span>
+        <span class="sidebar-tag-name" data-tags="微信"><span class="iconfont-archer">&#xe606;</span>微信</span>
     
-        <span class="sidebar-tag-name" data-tags="游记"><span class="iconfont-archer">&#xe606;</span>游记</span>
-    
-        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
+        <span class="sidebar-tag-name" data-tags="社交网络"><span class="iconfont-archer">&#xe606;</span>社交网络</span>
     
         <span class="sidebar-tag-name" data-tags="数组"><span class="iconfont-archer">&#xe606;</span>数组</span>
     
-        <span class="sidebar-tag-name" data-tags="难"><span class="iconfont-archer">&#xe606;</span>难</span>
+        <span class="sidebar-tag-name" data-tags="medium"><span class="iconfont-archer">&#xe606;</span>medium</span>
+    
+        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
+    
+        <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
         <span class="sidebar-tag-name" data-tags="中等"><span class="iconfont-archer">&#xe606;</span>中等</span>
     
+        <span class="sidebar-tag-name" data-tags="难"><span class="iconfont-archer">&#xe606;</span>难</span>
+    
         <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="大理"><span class="iconfont-archer">&#xe606;</span>大理</span>
+    
+        <span class="sidebar-tag-name" data-tags="游记"><span class="iconfont-archer">&#xe606;</span>游记</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -809,15 +834,15 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="浮生散记"><span class="iconfont-archer">&#xe60a;</span>浮生散记</span>
-    
         <span class="sidebar-category-name" data-categories="test"><span class="iconfont-archer">&#xe60a;</span>test</span>
     
-        <span class="sidebar-category-name" data-categories="在路上"><span class="iconfont-archer">&#xe60a;</span>在路上</span>
+        <span class="sidebar-category-name" data-categories="浮生散记"><span class="iconfont-archer">&#xe60a;</span>浮生散记</span>
     
         <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
     
         <span class="sidebar-category-name" data-categories="c"><span class="iconfont-archer">&#xe60a;</span>c</span>
+    
+        <span class="sidebar-category-name" data-categories="在路上"><span class="iconfont-archer">&#xe60a;</span>在路上</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
