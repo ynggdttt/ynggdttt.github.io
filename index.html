@@ -359,6 +359,41 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/04/08/【Leetcode】101-Symmetric-Tree/">
+            
+                <span>【Leetcode】101.Symmetric Tree</span>
+        </a>
+        <div class="abstract-content">
+            题目 判断是否是对称二叉树给定一个二叉树，检查它是否是镜像对称的。
+案例二叉树 [1,2,2,3,4,4,3] 是对称的。12345    1   / \  2   2 / \ / \3  4 4  3
+但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:12345  1 / \2   2 \   \ 3    3
+思路这道题反反复复几次总容易想错，实际上要看这个二叉树的左右子树是不是对称二叉树，实际上是看左右节点的子树是不是对称二叉树，也就是左节点的左子树和右节点的右子树是不是对称的，左节点的右子树和右节点的左子树的不是对称的。具体代码如下；
+代码1234567...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="树">树</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">
             
                 <span>【Leetcode】81. Search in Rotated Sorted Array II</span>
@@ -380,9 +415,9 @@ height:50vh;
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
     
 </div>
             
@@ -418,9 +453,9 @@ height:50vh;
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
     
 </div>
             
@@ -442,7 +477,7 @@ height:50vh;
 输入为非空字符串且只包含数字 1 和 0。
 案例示例 1:12输入: a = &quot;11&quot;, b = &quot;1&quot;输出: &quot;100&quot;
 示例 2:12输入: a = &quot;1010&quot;, b = &quot;1011&quot;输出: &quot;10101&quot;
-思路首先将当前的区间按照start从低到高排序，如果后面一个区间的start比前一个的end要大，那么两者是没有重复的，直接将第二个放到当前的结果中；否则就是存在重复的区间，那就将当前res中...
+思路从后向前看，如果当前的的位不存在，那么直接赋值为0，否则的话，赋值为当前的字符值，并于carry相加，这样不断的循环，直到两个字符串都遍历结束；具体看代码：需要注意的是，每次取的时候要转化...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -634,71 +669,7 @@ Permutations47.
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/14/2018-12-14-test2/">
-            
-                <span>test2</span>
-        </a>
-        <div class="abstract-content">
-            我来看看是不是好了这下应该是好了
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="haha">haha</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/14/2018-12-14-test/">
-            
-                <span>test</span>
-        </a>
-        <div class="abstract-content">
-            This is a test 
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hehe">hehe</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
-    </nav>
     
 </main>
             <!-- profile -->
@@ -970,56 +941,9 @@ Permutations47.
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 12
+        Total : 9
         </div>
         <!-- search  -->
         
@@ -1035,12 +959,17 @@ Permutations47.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href="/2019/04/08/【Leetcode】101-Symmetric-Tree/">【Leetcode】101.Symmetric Tree</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
         </li>
     
     
@@ -1073,62 +1002,18 @@ Permutations47.
             <span class="archive-post-date">02/21</span><a class="archive-post-title" href="/2019/02/21/【leetcode】36-Valid-Sudoku/">【leetcode】36. Valid Sudoku</a>
         </li>
     
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2018 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/14</span><a class="archive-post-title" href="/2018/12/14/2018-12-14-test2/">test2</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/14</span><a class="archive-post-title" href="/2018/12/14/2018-12-14-test/">test</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2014 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/25</span><a class="archive-post-title" href="/2014/09/25/2014-09-25-没有微信的24小时里/">没有微信的 24 小时里</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href="/2014/09/21/2014-09-21-大理：一场风花雪月的事/">大理：一场风花雪月的事</a>
-        </li>
-    
     </ul></div>
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="haha"><span class="iconfont-archer">&#xe606;</span>haha</span>
+        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
-        <span class="sidebar-tag-name" data-tags="微信"><span class="iconfont-archer">&#xe606;</span>微信</span>
-    
-        <span class="sidebar-tag-name" data-tags="社交网络"><span class="iconfont-archer">&#xe606;</span>社交网络</span>
-    
-        <span class="sidebar-tag-name" data-tags="hehe"><span class="iconfont-archer">&#xe606;</span>hehe</span>
+        <span class="sidebar-tag-name" data-tags="medium"><span class="iconfont-archer">&#xe606;</span>medium</span>
     
         <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
     
         <span class="sidebar-tag-name" data-tags="数组"><span class="iconfont-archer">&#xe606;</span>数组</span>
-    
-        <span class="sidebar-tag-name" data-tags="medium"><span class="iconfont-archer">&#xe606;</span>medium</span>
     
         <span class="sidebar-tag-name" data-tags="中等"><span class="iconfont-archer">&#xe606;</span>中等</span>
     
@@ -1137,10 +1022,6 @@ Permutations47.
         <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
         <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
-    
-        <span class="sidebar-tag-name" data-tags="大理"><span class="iconfont-archer">&#xe606;</span>大理</span>
-    
-        <span class="sidebar-tag-name" data-tags="游记"><span class="iconfont-archer">&#xe606;</span>游记</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1175,15 +1056,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="test"><span class="iconfont-archer">&#xe60a;</span>test</span>
-    
-        <span class="sidebar-category-name" data-categories="浮生散记"><span class="iconfont-archer">&#xe60a;</span>浮生散记</span>
-    
         <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
     
         <span class="sidebar-category-name" data-categories="c"><span class="iconfont-archer">&#xe60a;</span>c</span>
-    
-        <span class="sidebar-category-name" data-categories="在路上"><span class="iconfont-archer">&#xe60a;</span>在路上</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
