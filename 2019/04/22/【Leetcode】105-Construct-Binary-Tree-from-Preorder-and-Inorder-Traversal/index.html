@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>leetcode之间的关系捋一捋 · 🏠</title>
+    <title>【Leetcode】105. Construct Binary Tree from Preorder and Inorder Traversal · 🏠</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">油腻高贵的唐怂怂的🏠</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">leetcode之间的关系捋一捋</a>
+                <a href="#" class="post-name">【Leetcode】105. Construct Binary Tree from Preorder and Inorder Traversal</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            leetcode之间的关系捋一捋
+            【Leetcode】105. Construct Binary Tree from Preorder and Inorder Traversal
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,20 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="知识点梳理">知识点梳理</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="树">树</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">7</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">366</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/02/23</span>
+                    <span class="post-intro-time">2019/04/22</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,10 +403,11 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="组合类型"><a href="#组合类型" class="headerlink" title="组合类型"></a>组合类型</h1><ol start="46">
-<li>Permutations<br>47.</li>
-</ol>
-<p>39.<br>40。</p>
+        <h1 id="题目-判断是否是对称二叉树"><a href="#题目-判断是否是对称二叉树" class="headerlink" title="题目 判断是否是对称二叉树"></a>题目 判断是否是对称二叉树</h1><p>根据一棵树的前序遍历与中序遍历构造二叉树。<br>你可以假设树中没有重复的元素。<br>返回如下的二叉树：</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>前序遍历 preorder = [3,9,20,15,7]<br>中序遍历 inorder = [9,3,15,20,7]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line"> / \</span><br><span class="line">9  20</span><br><span class="line">  /  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这道题实际上就是前序遍历的是，中左右，中序遍历的顺序是左中右，那么前序遍历的第一个点就是根节点，我们在中序遍历的数组中找到根节点的位置，左边就是左子树，右边就是右子树，不断的递归；这个题之前做的时候，是每次都构造新的vector,但是这样就会爆栈溢出，实际上每次传递引用即可。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">buildTree</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; preorder, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; inorder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> pl = <span class="number">0</span>, pr = preorder.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> vl = <span class="number">0</span>, vr = inorder.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> dfs(preorder, pl, pr, inorder, vl, vr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">TreeNode* <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; preorder, <span class="keyword">int</span> pl, <span class="keyword">int</span> pr, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; inorder, <span class="keyword">int</span> vl, <span class="keyword">int</span> vr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(pl &gt; pr || vl &gt; vr)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(; pos &lt; vr; pos++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(preorder[pl] == inorder[pos])</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> len = pos - vl;</span><br><span class="line">        TreeNode* root = <span class="keyword">new</span> TreeNode(preorder[pl]);</span><br><span class="line">        root-&gt;left = dfs(preorder, pl + <span class="number">1</span>, pl + len, inorder, vl, pos - <span class="number">1</span>);</span><br><span class="line">        root-&gt;right = dfs(preorder, pl + len + <span class="number">1</span>, pr, inorder, pos + <span class="number">1</span>, vr);</span><br><span class="line">        <span class="keyword">return</span> root;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </article>
     <!-- license  -->
@@ -413,17 +416,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/02/23/关于c-push-pop小命令的笔记小抄/" title="关于c++ push ,pop小命令的笔记小抄">
-                    <div class="nextTitle">关于c++ push ,pop小命令的笔记小抄</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/02/21/【leetcode】36-Valid-Sudoku/" title="【leetcode】36. Valid Sudoku">
-                    <div class="prevTitle">【leetcode】36. Valid Sudoku</div>
+                <a href="/2019/04/08/【Leetcode】101-Symmetric-Tree/" title="【Leetcode】101.Symmetric Tree">
+                    <div class="prevTitle">【Leetcode】101.Symmetric Tree</div>
                 </a>
             
         </li>
@@ -546,7 +544,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#组合类型"><span class="toc-number">1.</span> <span class="toc-text">组合类型</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目-判断是否是对称二叉树"><span class="toc-number">1.</span> <span class="toc-text">题目 判断是否是对称二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-number">1.1.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
