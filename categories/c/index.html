@@ -346,35 +346,26 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/04/24/多态，虚函数，抽象类/">
+        <a class="abstract-title" href="/2019/02/23/关于c-push-pop小命令的笔记小抄/">
             
-                <span>多态，虚函数，抽象类</span>
+                <span>关于c++ push ,pop小命令的笔记小抄</span>
         </a>
         <div class="abstract-content">
-            多态
-目的：提供程序的可扩充性，有些语言有继承的概念但是没有多态的概念，只能称为基于对象的语言，不能称为面向对象的语言；
-多态的表现形式：
+            set 插入：insert;
+vector 插入：push_back; 删除：pop_back;
+queuemap 访问map的key 和 value 的时候，是m.second 或者 m.first  
 
-
-派生类的指针可以赋值给基类；（1）若该指针指向一个基类的对象，那么被调用是基类的虚函数;（2）若该指针指向一个派生类的对象，那么被调用的是派生类的虚函数。举例：
-12345678910111213class CBase &#123; public:    virtual void SomeVirtualFunction() &#123; &#125;&#125;;class CDerived:public CBase &#123;public :...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/24</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/23</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="C++面试知识点总结">C++面试知识点总结</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="多态">多态</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="虚函数">虚函数</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="抽象类">抽象类</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="c++习惯总结">c++习惯总结</a>
     
 </div>
             
@@ -602,6 +593,8 @@
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 12
@@ -683,17 +676,15 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
-    
         <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
         <span class="sidebar-tag-name" data-tags="medium"><span class="iconfont-archer">&#xe606;</span>medium</span>
     
+        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
+    
         <span class="sidebar-tag-name" data-tags="数组"><span class="iconfont-archer">&#xe606;</span>数组</span>
     
         <span class="sidebar-tag-name" data-tags="中等"><span class="iconfont-archer">&#xe606;</span>中等</span>
-    
-        <span class="sidebar-tag-name" data-tags="难"><span class="iconfont-archer">&#xe606;</span>难</span>
     
         <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
@@ -706,6 +697,8 @@
         <span class="sidebar-tag-name" data-tags="虚函数"><span class="iconfont-archer">&#xe606;</span>虚函数</span>
     
         <span class="sidebar-tag-name" data-tags="抽象类"><span class="iconfont-archer">&#xe606;</span>抽象类</span>
+    
+        <span class="sidebar-tag-name" data-tags="难"><span class="iconfont-archer">&#xe606;</span>难</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -755,6 +748,34 @@ jsonContent:
     <script>
     var siteMeta = {
         root: "/",
+        author: "John Doe"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+     
+    </body>
+</html>
+
+
         author: "John Doe"
     }
 </script>
