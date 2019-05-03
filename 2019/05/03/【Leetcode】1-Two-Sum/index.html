@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>🏠</title>
+    <title>【Leetcode】1. Two Sum · 🏠</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">油腻高贵的唐怂怂的🏠</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">【Leetcode】1. Two Sum</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">油腻高贵的唐怂怂的🏠</a>
 </header>
@@ -220,24 +231,76 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            【Leetcode】1. Two Sum
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="简单">简单</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">331</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/05/03</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,133 +401,51 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/27/类成员可访问的情况/">
-            
-                <span>类成员可访问的情况</span>
-        </a>
-        <div class="abstract-content">
-            Private基类的Private成员可以被以下两种访问：
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="题目-两数之和"><a href="#题目-两数之和" class="headerlink" title="题目  两数之和"></a>题目  两数之和</h1><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure></p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>实际上是</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>设置三个标志矩阵，分别记录各行，各列，各小方阵是否出现某个数字，其中行和列标志下标很好对应，就是小方阵的下标需要稍稍转换一下，如下代码；</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidSudoku</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = board.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt; iscol(n,<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(n,<span class="literal">false</span>));</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt; isrow(n,<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(n,<span class="literal">false</span>));</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt; ismini(n,<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(n,<span class="literal">false</span>));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(board[i][j] &gt;= <span class="string">'0'</span> &amp;&amp; board[i][j] &lt;= <span class="string">'9'</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> t = board[i][j] - <span class="string">'1'</span>;</span><br><span class="line">                    <span class="keyword">if</span>(iscol[t][j] || isrow[i][t] || ismini[<span class="number">3</span> * (i / <span class="number">3</span>) + j / <span class="number">3</span>][t])</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    iscol[t][j] = <span class="literal">true</span>;</span><br><span class="line">                    isrow[i][t] = <span class="literal">true</span>;</span><br><span class="line">                    ismini[<span class="number">3</span> * (i / <span class="number">3</span>) + j / <span class="number">3</span>][t] = <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-基类的成员函数
-基类的友员函数
-
-Protected基类的Protected成员可以被以下访问：
-
-基类的成员函数
-基类的友员函数
-派生类的成员函数可以访问当前对象的基类的保护成员
-
-Pulbic基类的Pulbic成员可以被以下访问：
-
-基类的成员函数
-基类的友员函数
-派生类的成员函数
-派生类的友员函数
-其他函数
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="C++面试知识点总结">C++面试知识点总结</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="对象">对象</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/24/多态，虚函数，抽象类/">
-            
-                <span>多态，虚函数，抽象类</span>
-        </a>
-        <div class="abstract-content">
-            多态
-目的：提供程序的可扩充性，有些语言有继承的概念但是没有多态的概念，只能称为基于对象的语言，不能称为面向对象的语言；
-多态的表现形式：
-
-
-派生类的指针可以赋值给基类指针；（1）若该指针指向一个基类的对象，那么被调用是基类的虚函数;（2）若该指针指向一个派生类的对象，那么被调用的是派生类的虚函数。举例：
-12345678910111213class CBase &#123; public:    virtual void SomeVirtualFunction() &#123; &#125;&#125;;class CDerived:public CBase &#123;public...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="C++面试知识点总结">C++面试知识点总结</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="多态">多态</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="虚函数">虚函数</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="抽象类">抽象类</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/23/关于c-push-pop小命令的笔记小抄/">
-            
-                <span>关于c++ push ,pop小命令的笔记小抄</span>
-        </a>
-        <div class="abstract-content">
-            set 插入：insert;
-vector 插入：push_back; 删除：pop_back;
-queuemap 访问map的key 和 value 的时候，是m.second 或者 m.first  
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="c++习惯总结">c++习惯总结</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/05/03/【Leetcode】4-Median-of-Two-Sorted-Arrays“/" title="【Leetcode】4. Median of Two Sorted Arrays">
+                    <div class="nextTitle">【Leetcode】4. Median of Two Sorted Arrays</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/04/27/类成员可访问的情况/" title="类成员可访问的情况">
+                    <div class="prevTitle">类成员可访问的情况</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -553,6 +534,24 @@ queuemap 访问map的key 和 value 的时候，是m.second 或者 m.first
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目-两数之和"><span class="toc-number">1.</span> <span class="toc-text">题目  两数之和</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-number">1.1.</span> <span class="toc-text">案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#说明"><span class="toc-number">1.2.</span> <span class="toc-text">说明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -938,6 +937,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

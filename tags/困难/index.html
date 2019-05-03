@@ -346,117 +346,32 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/04/27/类成员可访问的情况/">
+        <a class="abstract-title" href="/2019/05/03/【Leetcode】4-Median-of-Two-Sorted-Arrays“/">
             
-                <span>类成员可访问的情况</span>
+                <span>【Leetcode】4. Median of Two Sorted Arrays</span>
         </a>
         <div class="abstract-content">
-            Private基类的Private成员可以被以下两种访问：
-
-基类的成员函数
-基类的友员函数
-
-Protected基类的Protected成员可以被以下访问：
-
-基类的成员函数
-基类的友员函数
-派生类的成员函数可以访问当前对象的基类的保护成员
-
-Pulbic基类的Pulbic成员可以被以下访问：
-
-基类的成员函数
-基类的友员函数
-派生类的成员函数
-派生类的友员函数
-其他函数
-
-
+            题目  寻找两个有序数组的中位数给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。
+请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。
+你可以假设 nums1 和 nums2 不会同时为空。
+案例示例 1:123nums1 = [1, 3]nums2 = [2]则中位数是 2.0
+示例 2:123nums1 = [1, 2]nums2 = [3, 4]则中位数是 (2 + 3)/2 = 2.5
+思路
+首先题目要求时间复杂度为O(log(m + n))，那么需要用二分法，但是两个数组怎么用二分法呢；
+第二点，中位数要怎么找呢，如果某个...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/03</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="C++面试知识点总结">C++面试知识点总结</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="对象">对象</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/24/多态，虚函数，抽象类/">
-            
-                <span>多态，虚函数，抽象类</span>
-        </a>
-        <div class="abstract-content">
-            多态
-目的：提供程序的可扩充性，有些语言有继承的概念但是没有多态的概念，只能称为基于对象的语言，不能称为面向对象的语言；
-多态的表现形式：
-
-
-派生类的指针可以赋值给基类指针；（1）若该指针指向一个基类的对象，那么被调用是基类的虚函数;（2）若该指针指向一个派生类的对象，那么被调用的是派生类的虚函数。举例：
-12345678910111213class CBase &#123; public:    virtual void SomeVirtualFunction() &#123; &#125;&#125;;class CDerived:public CBase &#123;public...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="C++面试知识点总结">C++面试知识点总结</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="多态">多态</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="虚函数">虚函数</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="抽象类">抽象类</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/23/关于c-push-pop小命令的笔记小抄/">
-            
-                <span>关于c++ push ,pop小命令的笔记小抄</span>
-        </a>
-        <div class="abstract-content">
-            set 插入：insert;
-vector 插入：push_back; 删除：pop_back;
-queuemap 访问map的key 和 value 的时候，是m.second 或者 m.first  
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="c++习惯总结">c++习惯总结</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="困难">困难</a>
     
 </div>
             

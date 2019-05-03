@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>🏠</title>
+    <title>【Leetcode】4. Median of Two Sorted Arrays · 🏠</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">油腻高贵的唐怂怂的🏠</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">【Leetcode】4. Median of Two Sorted Arrays</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">油腻高贵的唐怂怂的🏠</a>
 </header>
@@ -220,24 +231,76 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            【Leetcode】4. Median of Two Sorted Arrays
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="困难">困难</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/05/03</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,133 +401,58 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/27/类成员可访问的情况/">
-            
-                <span>类成员可访问的情况</span>
-        </a>
-        <div class="abstract-content">
-            Private基类的Private成员可以被以下两种访问：
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="题目-寻找两个有序数组的中位数"><a href="#题目-寻找两个有序数组的中位数" class="headerlink" title="题目  寻找两个有序数组的中位数"></a>题目  寻找两个有序数组的中位数</h1><p>给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。</p>
+<p>请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。</p>
+<p>你可以假设 nums1 和 nums2 不会同时为空。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nums1 = [1, 3]</span><br><span class="line">nums2 = [2]</span><br><span class="line">则中位数是 2.0</span><br></pre></td></tr></table></figure></p>
+<p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nums1 = [1, 2]</span><br><span class="line">nums2 = [3, 4]</span><br><span class="line">则中位数是 (2 + 3)/2 = 2.5</span><br></pre></td></tr></table></figure></p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ul>
+<li>首先题目要求时间复杂度为O(log(m + n))，那么需要用二分法，但是两个数组怎么用二分法呢；</li>
+<li>第二点，中位数要怎么找呢，如果某个有序数组长度是奇数，那么其中位数就是最中间那个，如果是偶数，那么就是最中间两个数字的平均值。这里对于两个有序数组也是一样的，假设两个有序数组的长度分别为m和n，由于两个数组长度之和 m+n 的奇偶不确定，因此需要分情况来讨论，对于奇数的情况，直接找到最中间的数即可，偶数的话需要求最中间两个数的平均值。为了简化代码，不分情况讨论，我们使用一个小 trick，我们分别找第 (m+n+1) / 2 个，和 (m+n+2) / 2 个，然后求其平均值即可，这对奇偶数均适用。加入 m+n 为奇数的话，那么其实 (m+n+1) / 2 和 (m+n+2) / 2 的值相等，相当于两个相同的数字相加再除以2，还是其本身。</li>
+<li>需要定义一个函数来在两个有序数组中找到第K个元素；</li>
+</ul>
+<ul>
+<li>首先，为了避免产生新的数组从而增加时间复杂度，我们使用两个变量i和j分别来标记数组 nums1 和 nums2 的起始位置。</li>
+<li>然后来处理一些 corner cases，比如当某一个数组的起始位置大于等于其数组长度时，说明其所有数字均已经被淘汰了，相当于一个空数组了，那么实际上就变成了在另一个数组中找数字，直接就可以找出来了。还有就是如果 K=1 的话，那么我们只要比较 nums1 和 nums2 的起始位置i和j上的数字就可以了。难点就在于一般的情况怎么处理？因为我们需要在两个有序数组中找到第K个元素，为了加快搜索的速度，我们要使用二分法，那么对谁二分呢，数组么？其实要对K二分，意思是我们需要分别在 nums1 和 nums2 中查找第 K/2 个元素，注意这里由于两个数组的长度不定，所以有可能某个数组没有第 K/2 个数字，所以我们需要先 check 一下，数组中到底存不存在第 K/2 个数字，如果存在就取出来，否则就赋值上一个整型最大值。如果某个数组没有第 K/2 个数字，那么我们就淘汰另一个数组的前 K/2 个数字即可。举个例子来说吧，比如 nums1 = {3}，nums2 = {2, 4, 5, 6, 7}，K=4，我们要找两个数组混合中第4个数字，那么我们分别在 nums1 和 nums2 中找第2个数字，我们发现 nums1 中只有一个数字，不存在第二个数字，那么 nums2 中的前2个数字可以直接跳过，为啥呢，因为我们要求整个混合数组的第4个数字，不管 nums1 中的那个数字是大是小，第4个数字绝不会出现在 nums2 的前两个数字中，所以可以直接跳过。</li>
+</ul>
+<ul>
+<li>最后就是二分法的核心啦，比较这两个数组的第 K/2 小的数字 midVal1 和 midVal2 的大小，如果第一个数组的第 K/2 个数字小的话，那么说明我们要找的数字肯定不在 nums1 中的前 K/2 个数字，所以我们可以将其淘汰，将 nums1 的起始位置向后移动 K/2 个，并且此时的K也自减去 K/2，调用递归。反之，我们淘汰 nums2 中的前 K/2 个数字，并将 nums2 的起始位置向后移动 K/2 个，并且此时的K也自减去 K/2<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = nums1.size(), n = nums2.size(), left = (m + n + <span class="number">1</span>) / <span class="number">2</span>, right = (m + n + <span class="number">2</span>) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> (findKth(nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, left) + findKth(nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, right)) / <span class="number">2.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findKth</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> i, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> j, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= nums1.size()) <span class="keyword">return</span> nums2[j + k - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (j &gt;= nums2.size()) <span class="keyword">return</span> nums1[i + k - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">1</span>) <span class="keyword">return</span> min(nums1[i], nums2[j]);</span><br><span class="line">        <span class="keyword">int</span> midVal1 = (i + k / <span class="number">2</span> - <span class="number">1</span> &lt; nums1.size()) ? nums1[i + k / <span class="number">2</span> - <span class="number">1</span>] : INT_MAX;</span><br><span class="line">        <span class="keyword">int</span> midVal2 = (j + k / <span class="number">2</span> - <span class="number">1</span> &lt; nums2.size()) ? nums2[j + k / <span class="number">2</span> - <span class="number">1</span>] : INT_MAX;</span><br><span class="line">        <span class="keyword">if</span> (midVal1 &lt; midVal2) &#123;</span><br><span class="line">            <span class="keyword">return</span> findKth(nums1, i + k / <span class="number">2</span>, nums2, j, k - k / <span class="number">2</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> findKth(nums1, i, nums2, j + k / <span class="number">2</span>, k - k / <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-基类的成员函数
-基类的友员函数
-
-Protected基类的Protected成员可以被以下访问：
-
-基类的成员函数
-基类的友员函数
-派生类的成员函数可以访问当前对象的基类的保护成员
-
-Pulbic基类的Pulbic成员可以被以下访问：
-
-基类的成员函数
-基类的友员函数
-派生类的成员函数
-派生类的友员函数
-其他函数
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="C++面试知识点总结">C++面试知识点总结</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="对象">对象</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/24/多态，虚函数，抽象类/">
-            
-                <span>多态，虚函数，抽象类</span>
-        </a>
-        <div class="abstract-content">
-            多态
-目的：提供程序的可扩充性，有些语言有继承的概念但是没有多态的概念，只能称为基于对象的语言，不能称为面向对象的语言；
-多态的表现形式：
-
-
-派生类的指针可以赋值给基类指针；（1）若该指针指向一个基类的对象，那么被调用是基类的虚函数;（2）若该指针指向一个派生类的对象，那么被调用的是派生类的虚函数。举例：
-12345678910111213class CBase &#123; public:    virtual void SomeVirtualFunction() &#123; &#125;&#125;;class CDerived:public CBase &#123;public...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="C++面试知识点总结">C++面试知识点总结</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="多态">多态</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="虚函数">虚函数</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="抽象类">抽象类</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/23/关于c-push-pop小命令的笔记小抄/">
-            
-                <span>关于c++ push ,pop小命令的笔记小抄</span>
-        </a>
-        <div class="abstract-content">
-            set 插入：insert;
-vector 插入：push_back; 删除：pop_back;
-queuemap 访问map的key 和 value 的时候，是m.second 或者 m.first  
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="c++习惯总结">c++习惯总结</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/05/03/【Leetcode】1-Two-Sum/" title="【Leetcode】1. Two Sum">
+                    <div class="prevTitle">【Leetcode】1. Two Sum</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -553,6 +541,24 @@ queuemap 访问map的key 和 value 的时候，是m.second 或者 m.first
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目-寻找两个有序数组的中位数"><span class="toc-number">1.</span> <span class="toc-text">题目  寻找两个有序数组的中位数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-number">1.1.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -938,6 +944,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
