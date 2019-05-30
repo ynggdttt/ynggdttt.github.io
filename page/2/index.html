@@ -359,6 +359,74 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/04/24/多态，虚函数，抽象类/">
+            
+                <span>多态，虚函数，抽象类</span>
+        </a>
+        <div class="abstract-content">
+            多态
+目的：提供程序的可扩充性，有些语言有继承的概念但是没有多态的概念，只能称为基于对象的语言，不能称为面向对象的语言；
+多态的表现形式：
+
+
+派生类的指针可以赋值给基类指针；（1）若该指针指向一个基类的对象，那么被调用是基类的虚函数;（2）若该指针指向一个派生类的对象，那么被调用的是派生类的虚函数。举例：
+12345678910111213class CBase &#123; public:    virtual void SomeVirtualFunction() &#123; &#125;&#125;;class CDerived:public CBase &#123;public...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="C++面试知识点总结">C++面试知识点总结</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="多态">多态</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="虚函数">虚函数</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="抽象类">抽象类</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/04/22/【Leetcode】106-Construct-Binary-Tree-from-Inorder-and-Postorder-Traversal/">
+            
+                <span>【Leetcode】106. Construct Binary Tree from Inorder and Postorder Traversal</span>
+        </a>
+        <div class="abstract-content">
+            题目 判断是否是对称二叉树根据一棵树的中序遍历与后序遍历构造二叉树。你可以假设树中没有重复的元素。返回如下的二叉树：
+案例中序遍历 inorder = [9,3,15,20,7]后序遍历 postorder = [9,15,7,20,3]
+123453 / \9  20  /  \ 15   7
+思路这道题是105基本相同，只不过，根节点在后续遍历数组的尾部，剩余都相同。
+代码1234567891011121314151617181920212223242526272829303132/** * Definition for a binary tree node. * struct Tr...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/04/22/【Leetcode】105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/">
             
                 <span>【Leetcode】105. Construct Binary Tree from Preorder and Inorder Traversal</span>
@@ -631,83 +699,10 @@ queuemap 访问map的key 和 value 的时候，是m.second 或者 m.first
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/23/leetcode之间的关系捋一捋/">
-            
-                <span>leetcode之间的关系捋一捋</span>
-        </a>
-        <div class="abstract-content">
-            组合类型
-Permutations47.
-
-39.40。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="知识点梳理">知识点梳理</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/21/【leetcode】36-Valid-Sudoku/">
-            
-                <span>【leetcode】36. Valid Sudoku</span>
-        </a>
-        <div class="abstract-content">
-            题目  有效的数独判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。
-
-数字 1-9 在每一行只能出现一次。
-数字 1-9 在每一列只能出现一次。
-数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
-
-
-数独部分空格内已填入了数字，空白格用 ‘.’ 表示。
-案例示例 1:
-输入:12345678910111213[  [&quot;5&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="中等">中等</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1131,9 +1126,43 @@ Permutations47.
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 20
+        Total : 22
         </div>
         <!-- search  -->
         
@@ -1146,6 +1175,16 @@ Permutations47.
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/【Leetcode】12-整数转罗马数字/">【Leetcode】12. 整数转罗马数字</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/【Leetcode】8-字符串转换整数-atoi-”/">【Leetcode】8. 字符串转换整数 (atoi)” </a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1223,6 +1262,11 @@ Permutations47.
         </li>
     
     
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">【Leetcode】56. Merge Intervals</a>
+        </li>
+    
+    
     
     
     
@@ -1244,11 +1288,6 @@ Permutations47.
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/24</span><a class="archive-post-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">【Leetcode】56. Merge Intervals</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -1280,11 +1319,11 @@ Permutations47.
     
         <span class="sidebar-tag-name" data-tags="medium"><span class="iconfont-archer">&#xe606;</span>medium</span>
     
+        <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
+    
         <span class="sidebar-tag-name" data-tags="中等"><span class="iconfont-archer">&#xe606;</span>中等</span>
     
         <span class="sidebar-tag-name" data-tags="双指针"><span class="iconfont-archer">&#xe606;</span>双指针</span>
-    
-        <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
     
         <span class="sidebar-tag-name" data-tags="滑动窗口"><span class="iconfont-archer">&#xe606;</span>滑动窗口</span>
     
@@ -1298,13 +1337,13 @@ Permutations47.
     
         <span class="sidebar-tag-name" data-tags="C++面试知识点总结"><span class="iconfont-archer">&#xe606;</span>C++面试知识点总结</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
-    
         <span class="sidebar-tag-name" data-tags="多态"><span class="iconfont-archer">&#xe606;</span>多态</span>
     
         <span class="sidebar-tag-name" data-tags="虚函数"><span class="iconfont-archer">&#xe606;</span>虚函数</span>
     
         <span class="sidebar-tag-name" data-tags="抽象类"><span class="iconfont-archer">&#xe606;</span>抽象类</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="对象"><span class="iconfont-archer">&#xe606;</span>对象</span>
     
