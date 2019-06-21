@@ -346,92 +346,20 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/04/22/【Leetcode】105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/">
+        <a class="abstract-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">
             
-                <span>【Leetcode】105. Construct Binary Tree from Preorder and Inorder Traversal</span>
+                <span>【Leetcode】56. Merge Intervals</span>
         </a>
         <div class="abstract-content">
-            题目 判断是否是对称二叉树根据一棵树的前序遍历与中序遍历构造二叉树。你可以假设树中没有重复的元素。返回如下的二叉树：
-案例前序遍历 preorder = [3,9,20,15,7]中序遍历 inorder = [9,3,15,20,7]
-123453 / \9  20  /  \ 15   7
-思路这道题实际上就是前序遍历的是，中左右，中序遍历的顺序是左中右，那么前序遍历的第一个点就是根节点，我们在中序遍历的数组中找到根节点的位置，左边就是左子树，右边就是右子树，不断的递归；这个题之前做的时候，是每次都构造新的vector,但是这样就会爆栈溢出，实际上每次传递引用即可。
-代码123456...
+            题目 合并区间给出一个区间的集合，请合并所有重叠的区间。
+案例示例 1:123输入: [[1,3],[2,6],[8,10],[15,18]]输出: [[1,6],[8,10],[15,18]]解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+示例 2:123输入: [[1,4],[4,5]]输出: [[1,5]]解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
+思路首先将当前的区间按照start从低到高排序，如果后面一个区间的start比前一个的end要大，那么两者是没有重复的，直接将第二个放到当前的结果中；否则就是存在重复的区间，那就将当前re...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="树">树</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/08/【Leetcode】101-Symmetric-Tree/">
-            
-                <span>【Leetcode】101.Symmetric Tree</span>
-        </a>
-        <div class="abstract-content">
-            题目 判断是否是对称二叉树给定一个二叉树，检查它是否是镜像对称的。
-案例二叉树 [1,2,2,3,4,4,3] 是对称的。12345    1   / \  2   2 / \ / \3  4 4  3
-但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:12345  1 / \2   2 \   \ 3    3
-思路这道题反反复复几次总容易想错，实际上要看这个二叉树的左右子树是不是对称二叉树，实际上是看左右节点的子树是不是对称二叉树，也就是左节点的左子树和右节点的右子树是不是对称的，左节点的右子树和右节点的左子树的不是对称的。具体代码如下；
-代码1234567...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="树">树</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">
-            
-                <span>【Leetcode】81. Search in Rotated Sorted Array II</span>
-        </a>
-        <div class="abstract-content">
-            题目 搜索旋转数组假设按照升序排序的数组在预先未知的某个点上进行了旋转。
-( 例如，数组 [0,0,1,2,2,5,6] 可能变为 [2,5,6,0,0,1,2] )。
-编写一个函数来判断给定的目标值是否存在于数组中。若存在返回 true，否则返回 false。
-案例示例 1:12输入: nums = [2,5,6,0,0,1,2], target = 0输出: true
-示例 2:12输入: nums = [2,5,6,0,0,1,2], target = 3输出: false
-思路这道题是33题的延伸，重复带来的问题就是，增加了判断哪边是有序的困难，比如[3 1 1] 和 [1 1 ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/06</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/24</span>
             </div>
             <!-- tags  -->
             
@@ -439,7 +367,7 @@
     
         <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="中等">中等</a>
     
 </div>
             
@@ -452,24 +380,26 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">
+        <a class="abstract-title" href="/2019/02/21/【leetcode】36-Valid-Sudoku/">
             
-                <span>【Leetcode】33. Search in Rotated Sorted Array</span>
+                <span>【leetcode】36. Valid Sudoku</span>
         </a>
         <div class="abstract-content">
-            题目 搜索旋转数组假设按照升序排序的数组在预先未知的某个点上进行了旋转。
-( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。
-搜索一个给定的目标值，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。
-你可以假设数组中不存在重复的元素。
-你的算法时间复杂度必须是 O(log n) 级别。
-输入为非空字符串且只包含数字 1 和 0。
-案例示例 1:12输入: nums = [4,5,6,7,0,1,2], target = 0输出: 4
-示例 2:12输入: nums = [4,5,6,7,0,1,2], target = 3输出: -1...
+            题目  有效的数独判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。
+
+数字 1-9 在每一行只能出现一次。
+数字 1-9 在每一列只能出现一次。
+数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
+
+
+数独部分空格内已填入了数字，空白格用 ‘.’ 表示。
+案例示例 1:
+输入:12345678910111213[  [&quot;5&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/06</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/21</span>
             </div>
             <!-- tags  -->
             
@@ -477,7 +407,7 @@
     
         <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="中等">中等</a>
     
 </div>
             
@@ -485,6 +415,10 @@
     </article>
     
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/tags/数组/">&#60; PREV</a><a class="page-number" href="/tags/数组/">1</a><span class="page-number current">2</span>
+    </nav>
     
 </main>
             <!-- profile -->
