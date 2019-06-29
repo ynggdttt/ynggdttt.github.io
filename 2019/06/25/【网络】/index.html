@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.4k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.4k</span>阅读时长: <span class="post-count reading-time">8 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -459,6 +459,56 @@ height:50vh;
 <h1 id="http-tcpip-socket"><a href="#http-tcpip-socket" class="headerlink" title="http\tcpip\socket"></a>http\tcpip\socket</h1><p>指路链接吧了<a href="https://www.cnblogs.com/cmyxn/p/6360474.html" target="_blank" rel="noopener">socket，tcp，http三者之间的区别和原理</a></p>
 <h1 id="网络协议"><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h1><p><img src="/2019/06/25/【网络】/五层.jpeg" alt="五层"><br><img src="/2019/06/25/【网络】/七层.png" alt="七层"></p>
 <h1 id="待看"><a href="#待看" class="headerlink" title="待看"></a>待看</h1><p><a href="https://blog.csdn.net/stringNewName/article/details/72717213" target="_blank" rel="noopener">https://blog.csdn.net/stringNewName/article/details/72717213</a></p>
+<h1 id="session-和-cookie"><a href="#session-和-cookie" class="headerlink" title="session 和 cookie"></a>session 和 cookie</h1><p><a href="https://blog.csdn.net/IT_zhang81/article/details/81776956" target="_blank" rel="noopener">讲解</a></p>
+<ul>
+<li>差异<br>①存在的位置：</li>
+</ul>
+<p>cookie 存在于客户端，临时文件夹中</p>
+<p>session：存在于服务器的内存中，一个session域对象为一个用户浏览器服务</p>
+<p>②安全性</p>
+<p>cookie是以明文的方式存放在客户端的，安全性低，可以通过一个加密算法进行加密后存放</p>
+<p>session存放于服务器的内存中，所以安全性好</p>
+<p>③网络传输量</p>
+<p>cookie会传递消息给服务器</p>
+<p>session本身存放于服务器，不会有传送流量</p>
+<p>④生命周期(以20分钟为例)</p>
+<p>(1)cookie的生命周期是累计的，从创建时，就开始计时，20分钟后，cookie生命周期结束，</p>
+<p>(2)session的生命周期是间隔的，从创建时，开始计时如在20分钟，没有访问session，那么session生命周期被销毁</p>
+<p>但是，如果在20分钟内（如在第19分钟时）访问过session，那么，将重新计算session的生命周期</p>
+<p>(3)关机会造成session生命周期的结束，但是对cookie没有影响<br>⑤访问范围</p>
+<p>session为一个用户浏览器独享</p>
+<p>cookie为多个用户浏览器共享</p>
+<h1 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h1><ol>
+<li>浏览器先检查自身缓存中有没有被解析过的这个域名对应的ip地址，如果有，解析结束。同时域名被缓存的时间也可通过TTL属性来设置。</li>
+<li>如果浏览器缓存中没有（专业点叫还没命中），浏览器会检查操作系统缓存中有没有对应的已解析过的结果。而操作系统也有一个域名解析的过程。在windows中可通过c盘里一个叫hosts的文件来设置，如果你在这里指定了一个域名对应的ip地址，那浏览器会首先使用这个ip地址。</li>
+</ol>
+<p>但是这种操作系统级别的域名解析规程也被很多黑客利用，通过修改你的hosts文件里的内容把特定的域名解析到他指定的ip地址上，造成所谓的域名劫持。所以在windows7中将hosts文件设置成了readonly，防止被恶意篡改。</p>
+<ol start="3">
+<li><p>如果至此还没有命中域名，才会真正的请求本地域名服务器（LDNS）来解析这个域名，这台服务器一般在你的城市的某个角落，距离你不会很远，并且这台服务器的性能都很好，一般都会缓存域名解析结果，大约80%的域名解析到这里就完成了。</p>
+</li>
+<li><p>如果LDNS仍然没有命中，就直接跳到Root Server 域名服务器请求解析</p>
+</li>
+<li><p>根域名服务器返回给LDNS一个所查询域的主域名服务器（gTLD Server，国际顶尖域名服务器，如.com .cn .org等）地址</p>
+</li>
+<li><p>此时LDNS再发送请求给上一步返回的gTLD</p>
+</li>
+<li><p>接受请求的gTLD查找并返回这个域名对应的Name Server的地址，这个Name Server就是网站注册的域名服务器</p>
+</li>
+<li><p>Name Server根据映射关系表找到目标ip，返回给LDNS</p>
+</li>
+<li><p>LDNS缓存这个域名和对应的ip</p>
+</li>
+<li><p>LDNS把解析的结果返回给用户，用户根据TTL值缓存到本地系统缓存中，域名解析过程至此结束</p>
+</li>
+</ol>
+<h1 id="请你说一下HTTP的报文段是什么样的？"><a href="#请你说一下HTTP的报文段是什么样的？" class="headerlink" title="请你说一下HTTP的报文段是什么样的？"></a>请你说一下HTTP的报文段是什么样的？</h1><p><a href="https://www.cnblogs.com/CodingUniversal/p/7524088.html" target="_blank" rel="noopener">开始背</a></p>
+<h1 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h1><p>状态码，100~199表示请求已收到继续处理，200~299表示成功，300~399表示资源重定向，400~499表示客户端请求出错，500~599表示服务器端出错</p>
+<p>200：响应成功</p>
+<p>302：跳转，重定向</p>
+<p>400：客户端有语法错误</p>
+<p>403：服务器拒绝提供服务</p>
+<p>404：请求资源不存在</p>
+<p>500：服务器内部错误</p>
 
     </article>
     <!-- license  -->
@@ -466,6 +516,11 @@ height:50vh;
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/06/26/【数据库】/" title="【数据库】">
+                    <div class="nextTitle">【数据库】</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -595,7 +650,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#tcp三次握手，四次挥手的具体"><span class="toc-number">1.</span> <span class="toc-text">tcp三次握手，四次挥手的具体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tcp、udp区别"><span class="toc-number">2.</span> <span class="toc-text">tcp、udp区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP为什么可靠"><span class="toc-number">3.</span> <span class="toc-text">TCP为什么可靠</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#https-的实现"><span class="toc-number">4.</span> <span class="toc-text">https 的实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#http-tcpip-socket"><span class="toc-number">5.</span> <span class="toc-text">http\tcpip\socket</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络协议"><span class="toc-number">6.</span> <span class="toc-text">网络协议</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#待看"><span class="toc-number">7.</span> <span class="toc-text">待看</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#tcp三次握手，四次挥手的具体"><span class="toc-number">1.</span> <span class="toc-text">tcp三次握手，四次挥手的具体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tcp、udp区别"><span class="toc-number">2.</span> <span class="toc-text">tcp、udp区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP为什么可靠"><span class="toc-number">3.</span> <span class="toc-text">TCP为什么可靠</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#https-的实现"><span class="toc-number">4.</span> <span class="toc-text">https 的实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#http-tcpip-socket"><span class="toc-number">5.</span> <span class="toc-text">http\tcpip\socket</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络协议"><span class="toc-number">6.</span> <span class="toc-text">网络协议</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#待看"><span class="toc-number">7.</span> <span class="toc-text">待看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#session-和-cookie"><span class="toc-number">8.</span> <span class="toc-text">session 和 cookie</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#域名解析"><span class="toc-number">9.</span> <span class="toc-text">域名解析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#请你说一下HTTP的报文段是什么样的？"><span class="toc-number">10.</span> <span class="toc-text">请你说一下HTTP的报文段是什么样的？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#状态码"><span class="toc-number">11.</span> <span class="toc-text">状态码</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1053,9 +1108,70 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 33
+        Total : 34
         </div>
         <!-- search  -->
         
@@ -1065,6 +1181,34 @@ top:50vh;
     
     
     
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/26</span><a class="archive-post-title" href="/2019/06/26/【数据库】/">【数据库】</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/05/27/【Leetcode】5-最长回文子串/">【Leetcode】5. 最长回文子串</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
@@ -1191,12 +1335,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
         </li>
     
     
@@ -1213,29 +1357,6 @@ top:50vh;
         <li class="archive-post-item">
             <span class="archive-post-date">02/24</span><a class="archive-post-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">【Leetcode】56. Merge Intervals</a>
         </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/05/27/【Leetcode】5-最长回文子串/">【Leetcode】5. 最长回文子串</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -1289,17 +1410,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
     
+        <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
+    
+        <span class="sidebar-tag-name" data-tags="隔离级别"><span class="iconfont-archer">&#xe606;</span>隔离级别</span>
+    
+        <span class="sidebar-tag-name" data-tags="常用语句"><span class="iconfont-archer">&#xe606;</span>常用语句</span>
+    
         <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
     
         <span class="sidebar-tag-name" data-tags="C++面试知识点总结"><span class="iconfont-archer">&#xe606;</span>C++面试知识点总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="多态"><span class="iconfont-archer">&#xe606;</span>多态</span>
     
         <span class="sidebar-tag-name" data-tags="虚函数"><span class="iconfont-archer">&#xe606;</span>虚函数</span>
     
         <span class="sidebar-tag-name" data-tags="抽象类"><span class="iconfont-archer">&#xe606;</span>抽象类</span>
-    
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="对象"><span class="iconfont-archer">&#xe606;</span>对象</span>
     
@@ -1340,11 +1467,13 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
     
-        <span class="sidebar-category-name" data-categories="网络"><span class="iconfont-archer">&#xe60a;</span>网络</span>
-    
         <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
     
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
+    
         <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
+    
+        <span class="sidebar-category-name" data-categories="网络"><span class="iconfont-archer">&#xe60a;</span>网络</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
