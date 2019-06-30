@@ -346,27 +346,18 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/06/23/【操作系统】进程线程/">
+        <a class="abstract-title" href="/2019/06/23/【Linux】/">
             
-                <span>【操作系统】进程线程</span>
+                <span>【Linux】</span>
         </a>
         <div class="abstract-content">
-            指路链接吧，讲的太好了分享链接
-进程线程
-进程：程序的一次执行
-线程：CPU的基本调度单位
-自己的感悟：线程是我们自己设计的，一个程序中可以开启多个线程去干活，这样快很多，但是必要的时候为了保证线程安全，就得加锁；进程，通常是操作系统调度的；
-进程是并行，线程并发
+            常用语法
+查看进程ps -ef//-e显示系统内的所有进程信息。-f使用完整的（full）格式显示进程信息。
+杀死进程kill -15 //正常退出kill -9 //强制退出
+怎么批量杀死进程，ps aux|grep python|grep -v grep|cut -c 9-15|xargs kill -15
+看进程号ps -a | grep “cmdname”
 
 
-进程之间通信参考链接，链接进程间通信（IPC，InterProcess Communication）是指在不同进程之间传播或交换信息。
-
-
-管道：速度慢，容量有限，只有父子进程能通讯    
-
-FIFO：任何进程间都能通讯，但速度慢    
-
-消息队列：容量受到系统限制，且要注意第一次读的时候，要考虑上一次没有读完数据的问...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -377,9 +368,7 @@ FIFO：任何进程间都能通讯，但速度慢
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="线程">线程</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="进程">进程</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Linux">Linux</a>
     
 </div>
             

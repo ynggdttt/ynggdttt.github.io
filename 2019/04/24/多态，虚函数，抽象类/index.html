@@ -278,7 +278,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1k</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">664</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -420,14 +420,7 @@ height:50vh;
 </li>
 </ul>
 <ol start="3">
-<li>多态的原理 – 动态连编</li>
-</ol>
-<ul>
-<li>“多态”的关键在于通过基类指针或引用调用 一个虚函数时，编译时不确定到底调用的是基类还 是派生类的函数，运行时才确定 —- 这叫“动态联编”。</li>
-<li>虚函数表<br>1）每一个有虚函数的类(或有虚函数的类的派生类) 都有一个虚函数表，该类的任何对象中都放着虚函数表的指针。虚函数表中列出了该类的虚函数地址。<br>如图：<br><img src="/2019/04/24/多态，虚函数，抽象类/虚函数表1.png" alt="基类虚函数表"><br><img src="/2019/04/24/多态，虚函数，抽象类/虚函数表2.png" alt="基类虚函数表"><br>多态的函数调用语句被编译成一系列根据基类指针所指向的(或基类引用所引用的)对象中存放的虚函数表的地址，在虚函数表中查找虚函数地址，并调用虚函数的指令；</li>
-</ul>
-<h1 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h1><p>在声明成员函数的时候，加上virtual关键字，该关键字只用在类定义函数的声明中，写函数体的时候不需要；<br><strong>注意</strong></p>
-<ol>
+<li><h1 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h1>在声明成员函数的时候，加上virtual关键字，该关键字只用在类定义函数的声明中，写函数体的时候不需要；<br><strong>注意</strong></li>
 <li>构造函数和静态成员函数不能是虚函数；</li>
 <li>虚函数和普通函数的差别在于，虚函数可以参与多态，而普通函数不能</li>
 <li>函数重写等于覆盖，重写的函数在基类中必须是虚函数；</li>
@@ -440,20 +433,9 @@ height:50vh;
 </ol>
 <p>编译出错是因为fun2()是Base的私有成员。即使运行到此时实际上调用的应该是 Derived的公有成员 fun2()也不行，因为语法检查是不考虑运行结果的。<br>如果将Base中的private换成public,即使Derived中的fun2()是private的，编译依然能通 过，也能正确调用Derived::fun2()。</p>
 <ol start="6">
-<li>一般基类的虚构函数都会写成是虚析构函数，这样才能把构造的对象成彻底析构掉；</li>
+<li>一般基类的虚构函数都会写成是虚析构函数，因为要不然基类指针只会析构掉基类的，不会析构掉派生类new出来的东西；</li>
+<li></li>
 </ol>
-<h1 id="纯虚函数和抽象类"><a href="#纯虚函数和抽象类" class="headerlink" title="纯虚函数和抽象类"></a>纯虚函数和抽象类</h1><ol>
-<li>纯虚函数: 没有函数体的虚函数；virtual void Print( ) = 0 ;</li>
-<li>包含纯虚函数的类叫抽象类；</li>
-</ol>
-<ul>
-<li>抽象类只能作为基类来派生新类使用，不能创建抽象类的对象</li>
-<li>抽象类的指针和引用可以指向由抽象类派生出来的类的对象</li>
-</ul>
-<ol start="3">
-<li>如果一个类从抽象类派生而来，那么当且仅当它实现了基类中的所有纯虚函 数，它才能成为非抽象类；</li>
-</ol>
-<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><p>没有多态机制的语言，叫基于对象的程序语言，有多态的才叫面向对象语言；</p>
 
     </article>
     <!-- license  -->
@@ -595,7 +577,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多态"><span class="toc-number">1.</span> <span class="toc-text">多态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#虚函数"><span class="toc-number">2.</span> <span class="toc-text">虚函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#纯虚函数和抽象类"><span class="toc-number">3.</span> <span class="toc-text">纯虚函数和抽象类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#补充"><span class="toc-number">4.</span> <span class="toc-text">补充</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多态"><span class="toc-number">1.</span> <span class="toc-text">多态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#虚函数"><span class="toc-number">2.</span> <span class="toc-text">虚函数</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -608,12 +590,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
     
     
     
@@ -1209,12 +1185,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
         </li>
     
     
@@ -1249,12 +1225,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
         </li>
     
     
@@ -1349,12 +1325,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
         </li>
     
     
@@ -1365,11 +1341,6 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">02/25</span><a class="archive-post-title" href="/2019/02/25/【Leetcode】57-Insert-Interval/">【Leetcode】57.Insert Interval</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/24</span><a class="archive-post-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">【Leetcode】56. Merge Intervals</a>
         </li>
     
     
@@ -1394,6 +1365,11 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">【Leetcode】56. Merge Intervals</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1443,9 +1419,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
-        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
-    
         <span class="sidebar-tag-name" data-tags="lambd"><span class="iconfont-archer">&#xe606;</span>lambd</span>
+    
+        <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
+    
+        <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
+    
+        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
     
         <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
@@ -1453,13 +1433,7 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="常用语句"><span class="iconfont-archer">&#xe606;</span>常用语句</span>
     
-        <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
-    
-        <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
-    
         <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
-    
-        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
     
         <span class="sidebar-tag-name" data-tags="C++面试知识点总结"><span class="iconfont-archer">&#xe606;</span>C++面试知识点总结</span>
     
@@ -1467,15 +1441,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="各种树"><span class="iconfont-archer">&#xe606;</span>各种树</span>
     
+        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
+    
         <span class="sidebar-tag-name" data-tags="多态"><span class="iconfont-archer">&#xe606;</span>多态</span>
     
         <span class="sidebar-tag-name" data-tags="虚函数"><span class="iconfont-archer">&#xe606;</span>虚函数</span>
     
         <span class="sidebar-tag-name" data-tags="抽象类"><span class="iconfont-archer">&#xe606;</span>抽象类</span>
     
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
         <span class="sidebar-tag-name" data-tags="对象"><span class="iconfont-archer">&#xe606;</span>对象</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1514,19 +1492,21 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
-    
         <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
         <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
     
-        <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
+        <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
     
         <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
+        <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
+    
         <span class="sidebar-category-name" data-categories="网络"><span class="iconfont-archer">&#xe60a;</span>网络</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

@@ -612,7 +612,13 @@ FIFO：任何进程间都能通讯，但速度慢
                 <span>【Linux】</span>
         </a>
         <div class="abstract-content">
-            
+            常用语法
+查看进程ps -ef//-e显示系统内的所有进程信息。-f使用完整的（full）格式显示进程信息。
+杀死进程kill -15 //正常退出kill -9 //强制退出
+怎么批量杀死进程，ps aux|grep python|grep -v grep|cut -c 9-15|xargs kill -15
+看进程号ps -a | grep “cmdname”
+
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -620,6 +626,12 @@ FIFO：任何进程间都能通讯，但速度慢
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/23</span>
             </div>
             <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Linux">Linux</a>
+    
+</div>
             
         </div>
     </article>
@@ -1457,12 +1469,6 @@ FIFO：任何进程间都能通讯，但速度慢
     
     
     
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 38
@@ -1486,12 +1492,12 @@ FIFO：任何进程间都能通讯，但速度慢
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
         </li>
     
     
@@ -1526,12 +1532,12 @@ FIFO：任何进程间都能通讯，但速度慢
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
         </li>
     
     
@@ -1626,12 +1632,12 @@ FIFO：任何进程间都能通讯，但速度慢
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
         </li>
     
     
@@ -1642,11 +1648,6 @@ FIFO：任何进程间都能通讯，但速度慢
     
         <li class="archive-post-item">
             <span class="archive-post-date">02/25</span><a class="archive-post-title" href="/2019/02/25/【Leetcode】57-Insert-Interval/">【Leetcode】57.Insert Interval</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/24</span><a class="archive-post-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">【Leetcode】56. Merge Intervals</a>
         </li>
     
     
@@ -1671,6 +1672,11 @@ FIFO：任何进程间都能通讯，但速度慢
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">【Leetcode】56. Merge Intervals</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1720,9 +1726,13 @@ FIFO：任何进程间都能通讯，但速度慢
     
         <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
-        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
-    
         <span class="sidebar-tag-name" data-tags="lambd"><span class="iconfont-archer">&#xe606;</span>lambd</span>
+    
+        <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
+    
+        <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
+    
+        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
     
         <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
@@ -1730,13 +1740,7 @@ FIFO：任何进程间都能通讯，但速度慢
     
         <span class="sidebar-tag-name" data-tags="常用语句"><span class="iconfont-archer">&#xe606;</span>常用语句</span>
     
-        <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
-    
-        <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
-    
         <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
-    
-        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
     
         <span class="sidebar-tag-name" data-tags="C++面试知识点总结"><span class="iconfont-archer">&#xe606;</span>C++面试知识点总结</span>
     
@@ -1744,15 +1748,19 @@ FIFO：任何进程间都能通讯，但速度慢
     
         <span class="sidebar-tag-name" data-tags="各种树"><span class="iconfont-archer">&#xe606;</span>各种树</span>
     
+        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
+    
         <span class="sidebar-tag-name" data-tags="多态"><span class="iconfont-archer">&#xe606;</span>多态</span>
     
         <span class="sidebar-tag-name" data-tags="虚函数"><span class="iconfont-archer">&#xe606;</span>虚函数</span>
     
         <span class="sidebar-tag-name" data-tags="抽象类"><span class="iconfont-archer">&#xe606;</span>抽象类</span>
     
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
         <span class="sidebar-tag-name" data-tags="对象"><span class="iconfont-archer">&#xe606;</span>对象</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1791,19 +1799,21 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
-    
         <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
         <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
     
-        <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
+        <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
     
         <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
+        <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
+    
         <span class="sidebar-category-name" data-categories="网络"><span class="iconfont-archer">&#xe60a;</span>网络</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
