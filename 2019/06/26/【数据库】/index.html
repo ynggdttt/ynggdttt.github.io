@@ -276,7 +276,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -454,9 +454,22 @@ height:50vh;
 <li>读未提交  脏读</li>
 <li>读提交 update 不可重复读</li>
 <li>不可重复读 insert 幻读</li>
-<li>序列化<br><img src="/2019/06/26/【数据库】/【数据库】】隔离级别" alt="【数据库】"><h1 id="事务的四大特性"><a href="#事务的四大特性" class="headerlink" title="事务的四大特性"></a>事务的四大特性</h1></li>
+<li>序列化<br><img src="/2019/06/26/【数据库】/【数据库】】隔离级别" alt="【数据库】"><h1 id="事务的四大特性"><a href="#事务的四大特性" class="headerlink" title="事务的四大特性"></a>事务的四大特性</h1>事务（Transaction）是由一系列对系统中数据进行访问与更新的操作所组成的一个程序执行逻辑单元。<br>acid<br>原子性、一致性、隔离性、持久性</li>
 </ol>
-<h1 id="三大范式"><a href="#三大范式" class="headerlink" title="三大范式"></a>三大范式</h1>
+<h1 id="三大范式"><a href="#三大范式" class="headerlink" title="三大范式"></a>三大范式</h1><p><a href="https://www.cnblogs.com/1906859953Lucas/p/8299959.html" target="_blank" rel="noopener">https://www.cnblogs.com/1906859953Lucas/p/8299959.html</a></p>
+<ol>
+<li>第一范式*（确保每列保持原子性）</li>
+<li>第二范式（确保表中的每列都和主键相关）</li>
+<li>第三范式（确保每列都和主键列直接相关，而不是间接相关）</li>
+</ol>
+<h1 id="varchar-和char的区别"><a href="#varchar-和char的区别" class="headerlink" title="varchar 和char的区别"></a>varchar 和char的区别</h1><ol>
+<li><p>char类型的长度是固定的，varchar的长度是可变的。</p>
+<p>这就表示，存储字符串’abc’，使用char(10)，表示存储的字符将占10个字节（包括7个空字符）</p>
+</li>
+</ol>
+<p>　　使用varchar2(10),，则表示只占3个字节，10是最大值，当存储的字符小于10时，按照实际的长度存储。</p>
+<h1 id="ER图"><a href="#ER图" class="headerlink" title="ER图"></a>ER图</h1><p>ER图分为实体、属性、关系三个核心部分。实体是长方形体现，而属性则是椭圆形，关系为菱形。</p>
+
     </article>
     <!-- license  -->
     
@@ -597,7 +610,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#索引"><span class="toc-number">1.</span> <span class="toc-text">索引</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#索引分类"><span class="toc-number">2.</span> <span class="toc-text">索引分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#隔离级别"><span class="toc-number">3.</span> <span class="toc-text">隔离级别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#事务的四大特性"><span class="toc-number">4.</span> <span class="toc-text">事务的四大特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三大范式"><span class="toc-number">5.</span> <span class="toc-text">三大范式</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#索引"><span class="toc-number">1.</span> <span class="toc-text">索引</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#索引分类"><span class="toc-number">2.</span> <span class="toc-text">索引分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#隔离级别"><span class="toc-number">3.</span> <span class="toc-text">隔离级别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#事务的四大特性"><span class="toc-number">4.</span> <span class="toc-text">事务的四大特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三大范式"><span class="toc-number">5.</span> <span class="toc-text">三大范式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#varchar-和char的区别"><span class="toc-number">6.</span> <span class="toc-text">varchar 和char的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ER图"><span class="toc-number">7.</span> <span class="toc-text">ER图</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1169,9 +1182,28 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 35
+        Total : 38
         </div>
         <!-- search  -->
         
@@ -1187,6 +1219,21 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【测试】/">【测试】</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【红黑树】/">【红黑树】</a>
         </li>
     
@@ -1194,29 +1241,6 @@ top:50vh;
         <li class="archive-post-item">
             <span class="archive-post-date">06/26</span><a class="archive-post-title" href="/2019/06/26/【数据库】/">【数据库】</a>
         </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/05/27/【Leetcode】5-最长回文子串/">【Leetcode】5. 最长回文子串</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -1340,12 +1364,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
         </li>
     
     
@@ -1362,6 +1386,29 @@ top:50vh;
         <li class="archive-post-item">
             <span class="archive-post-date">02/24</span><a class="archive-post-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">【Leetcode】56. Merge Intervals</a>
         </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/05/27/【Leetcode】5-最长回文子串/">【Leetcode】5. 最长回文子串</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -1411,9 +1458,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
-        <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
+        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
     
-        <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
+        <span class="sidebar-tag-name" data-tags="lambd"><span class="iconfont-archer">&#xe606;</span>lambd</span>
     
         <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
@@ -1421,13 +1468,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="常用语句"><span class="iconfont-archer">&#xe606;</span>常用语句</span>
     
+        <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
+    
+        <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
+    
+        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
+    
+        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
+    
         <span class="sidebar-tag-name" data-tags="C++面试知识点总结"><span class="iconfont-archer">&#xe606;</span>C++面试知识点总结</span>
     
         <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
     
         <span class="sidebar-tag-name" data-tags="各种树"><span class="iconfont-archer">&#xe606;</span>各种树</span>
-    
-        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
     
         <span class="sidebar-tag-name" data-tags="多态"><span class="iconfont-archer">&#xe606;</span>多态</span>
     
@@ -1435,9 +1488,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="抽象类"><span class="iconfont-archer">&#xe606;</span>抽象类</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
-    
         <span class="sidebar-tag-name" data-tags="对象"><span class="iconfont-archer">&#xe606;</span>对象</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1476,13 +1529,17 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
     
-        <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
-    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
+        <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
+    
+        <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
+    
         <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
+    
+        <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
         <span class="sidebar-category-name" data-categories="网络"><span class="iconfont-archer">&#xe60a;</span>网络</span>
     
