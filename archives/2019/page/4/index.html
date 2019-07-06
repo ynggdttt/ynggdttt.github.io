@@ -346,6 +346,103 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/04/22/【Leetcode】106-Construct-Binary-Tree-from-Inorder-and-Postorder-Traversal/">
+            
+                <span>【Leetcode】106. Construct Binary Tree from Inorder and Postorder Traversal</span>
+        </a>
+        <div class="abstract-content">
+            题目 判断是否是对称二叉树根据一棵树的中序遍历与后序遍历构造二叉树。你可以假设树中没有重复的元素。返回如下的二叉树：
+案例中序遍历 inorder = [9,3,15,20,7]后序遍历 postorder = [9,15,7,20,3]
+123453 / \9  20  /  \ 15   7
+思路这道题是105基本相同，只不过，根节点在后续遍历数组的尾部，剩余都相同。
+代码1234567891011121314151617181920212223242526272829303132/** * Definition for a binary tree node. * struct Tr...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/04/22/【Leetcode】105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/">
+            
+                <span>【Leetcode】105. Construct Binary Tree from Preorder and Inorder Traversal</span>
+        </a>
+        <div class="abstract-content">
+            题目 判断是否是对称二叉树根据一棵树的前序遍历与中序遍历构造二叉树。你可以假设树中没有重复的元素。返回如下的二叉树：
+案例前序遍历 preorder = [3,9,20,15,7]中序遍历 inorder = [9,3,15,20,7]
+123453 / \9  20  /  \ 15   7
+思路这道题实际上就是前序遍历的是，中左右，中序遍历的顺序是左中右，那么前序遍历的第一个点就是根节点，我们在中序遍历的数组中找到根节点的位置，左边就是左子树，右边就是右子树，不断的递归；这个题之前做的时候，是每次都构造新的vector,但是这样就会爆栈溢出，实际上每次传递引用即可。
+代码123456...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="树">树</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/04/08/【Leetcode】101-Symmetric-Tree/">
+            
+                <span>【Leetcode】101.Symmetric Tree</span>
+        </a>
+        <div class="abstract-content">
+            题目 判断是否是对称二叉树给定一个二叉树，检查它是否是镜像对称的。
+案例二叉树 [1,2,2,3,4,4,3] 是对称的。12345    1   / \  2   2 / \ / \3  4 4  3
+但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:12345  1 / \2   2 \   \ 3    3
+思路这道题反反复复几次总容易想错，实际上要看这个二叉树的左右子树是不是对称二叉树，实际上是看左右节点的子树是不是对称二叉树，也就是左节点的左子树和右节点的右子树是不是对称的，左节点的右子树和右节点的左子树的不是对称的。具体代码如下；
+代码1234567...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="树">树</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">
             
                 <span>【Leetcode】81. Search in Rotated Sorted Array II</span>
@@ -584,50 +681,10 @@ Permutations47.
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/21/【leetcode】36-Valid-Sudoku/">
-            
-                <span>【leetcode】36. Valid Sudoku</span>
-        </a>
-        <div class="abstract-content">
-            题目  有效的数独判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。
-
-数字 1-9 在每一行只能出现一次。
-数字 1-9 在每一列只能出现一次。
-数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
-
-
-数独部分空格内已填入了数字，空白格用 ‘.’ 表示。
-案例示例 1:
-输入:12345678910111213[  [&quot;5&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="中等">中等</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2019/page/3/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><span class="page-number current">4</span>
+        <a class="extend prev" rel="prev" href="/archives/2019/page/3/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2019/page/5/">5</a><a class="extend next" rel="next" href="/archives/2019/page/5/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1296,14 +1353,9 @@ Permutations47.
     
     
     
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 38
+        Total : 41
         </div>
         <!-- search  -->
         
@@ -1319,17 +1371,32 @@ Permutations47.
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【英文】/">【英文】</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】40-组合总和-II/">【Leetcode】40. 组合总和 II</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】39-组合总和/">【Leetcode】39. 组合总和</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【测试】/">【测试】</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
         </li>
     
     
@@ -1364,12 +1431,12 @@ Permutations47.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
         </li>
     
     
@@ -1379,12 +1446,12 @@ Permutations47.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
         </li>
     
     
@@ -1464,22 +1531,7 @@ Permutations47.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/03</span><a class="archive-post-title" href="/2019/03/03/【Leetcode】67-Add-Binary/">【Leetcode】67.Add Binary</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/25</span><a class="archive-post-title" href="/2019/02/25/【Leetcode】57-Insert-Interval/">【Leetcode】57.Insert Interval</a>
         </li>
     
     
@@ -1507,6 +1559,21 @@ Permutations47.
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href="/2019/03/03/【Leetcode】67-Add-Binary/">【Leetcode】67.Add Binary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href="/2019/02/25/【Leetcode】57-Insert-Interval/">【Leetcode】57.Insert Interval</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">02/24</span><a class="archive-post-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">【Leetcode】56. Merge Intervals</a>
         </li>
     
@@ -1530,13 +1597,13 @@ Permutations47.
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
-    
-        <span class="sidebar-tag-name" data-tags="语法"><span class="iconfont-archer">&#xe606;</span>语法</span>
-    
         <span class="sidebar-tag-name" data-tags="数组"><span class="iconfont-archer">&#xe606;</span>数组</span>
     
         <span class="sidebar-tag-name" data-tags="简单"><span class="iconfont-archer">&#xe606;</span>简单</span>
+    
+        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
+    
+        <span class="sidebar-tag-name" data-tags="语法"><span class="iconfont-archer">&#xe606;</span>语法</span>
     
         <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
@@ -1552,17 +1619,23 @@ Permutations47.
     
         <span class="sidebar-tag-name" data-tags="滑动窗口"><span class="iconfont-archer">&#xe606;</span>滑动窗口</span>
     
+        <span class="sidebar-tag-name" data-tags="回溯"><span class="iconfont-archer">&#xe606;</span>回溯</span>
+    
+        <span class="sidebar-tag-name" data-tags="dfs"><span class="iconfont-archer">&#xe606;</span>dfs</span>
+    
         <span class="sidebar-tag-name" data-tags="困难"><span class="iconfont-archer">&#xe606;</span>困难</span>
     
         <span class="sidebar-tag-name" data-tags="难"><span class="iconfont-archer">&#xe606;</span>难</span>
     
         <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
-        <span class="sidebar-tag-name" data-tags="lambd"><span class="iconfont-archer">&#xe606;</span>lambd</span>
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
     
         <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
+    
+        <span class="sidebar-tag-name" data-tags="lambd"><span class="iconfont-archer">&#xe606;</span>lambd</span>
     
         <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
     
@@ -1582,6 +1655,8 @@ Permutations47.
     
         <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
     
+        <span class="sidebar-tag-name" data-tags="英文表达"><span class="iconfont-archer">&#xe606;</span>英文表达</span>
+    
         <span class="sidebar-tag-name" data-tags="多态"><span class="iconfont-archer">&#xe606;</span>多态</span>
     
         <span class="sidebar-tag-name" data-tags="虚函数"><span class="iconfont-archer">&#xe606;</span>虚函数</span>
@@ -1591,8 +1666,6 @@ Permutations47.
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="对象"><span class="iconfont-archer">&#xe606;</span>对象</span>
-    
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1631,9 +1704,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
     
-        <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
         <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
+    
+        <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
@@ -1643,9 +1718,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
     
-        <span class="sidebar-category-name" data-categories="网络"><span class="iconfont-archer">&#xe60a;</span>网络</span>
+        <span class="sidebar-category-name" data-categories="专业术语"><span class="iconfont-archer">&#xe60a;</span>专业术语</span>
     
-        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+        <span class="sidebar-category-name" data-categories="网络"><span class="iconfont-archer">&#xe60a;</span>网络</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
