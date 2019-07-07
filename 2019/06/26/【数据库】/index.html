@@ -276,7 +276,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.9k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -469,6 +469,9 @@ height:50vh;
 </ol>
 <p>　　使用varchar2(10),，则表示只占3个字节，10是最大值，当存储的字符小于10时，按照实际的长度存储。</p>
 <h1 id="ER图"><a href="#ER图" class="headerlink" title="ER图"></a>ER图</h1><p>ER图分为实体、属性、关系三个核心部分。实体是长方形体现，而属性则是椭圆形，关系为菱形。</p>
+<h1 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h1><p><a href="https://www.jianshu.com/p/26881a1b9e30" target="_blank" rel="noopener">https://www.jianshu.com/p/26881a1b9e30</a><br>概念：多个并发进程因争夺系统资源而产生相互等待的现象。<br>1、互斥：某种资源一次只允许一个进程访问，即该资源一旦分配给某个进程，其他进程就不能再访问，直到该进程访问结束。<br> 2、占有且等待：一个进程本身占有资源（一种或多种），同时还有资源未得到满足，正在等待其他进程释放该资源。<br>3、不可抢占：别人已经占有了某项资源，你不能因为自己也需要该资源，就去把别人的资源抢过来。<br>4、循环等待：存在一个进程链，使得每个进程都占有下一个进程所需的至少一种资源。<br>解决办法：<br>1、死锁预防 —– 确保系统永远不会进入死锁状态<br>a、破坏“占有且等待”条件<br>b、破坏“不可抢占”条件<br>c、破坏“循环等待”条件<br>2、避免死锁 —– 在使用前进行判断，只允许不会产生死锁的进程申请资源<br>两种避免办法：<br>    1、如果一个进程的请求会导致死锁，则不启动该进程<br>    2、如果一个进程的增加资源请求会导致死锁 ，则拒绝该申请。<br>3、死锁检测与解除 —– 在检测到运行系统进入死锁，进行恢复。<br>1、抢占资源：从一个或多个进程中抢占足够数量的资源分配给死锁进程，以解除死锁状态。<br>2、终止（或撤销）进程：终止或撤销系统中的一个或多个死锁进程，直至打破死锁状态。<br>    a、终止所有的死锁进程。这种方式简单粗暴，但是代价很大，很有可能会导致一些已经运行了很久的进程前功尽弃。<br>    b、逐个终止进程，直至死锁状态解除</p>
+<p>饥饿锁<br>用远得不到资源<br>活锁<br>两人争夺资源都进，都让<br><a href="https://blog.csdn.net/u013766342/article/details/80929719" target="_blank" rel="noopener">https://blog.csdn.net/u013766342/article/details/80929719</a></p>
+<p>常用语句<br> <a href="https://www.cnblogs.com/ieayoio/p/5293124.html" target="_blank" rel="noopener">https://www.cnblogs.com/ieayoio/p/5293124.html</a><br>删除列名<br>alter table 表名 drop column 列名;<br>添加列<br>alter table tableName add columnName varchar(30)<br>增<br>insert into 表名 （col1，col2….coln）values(value1,value2…..valuen)；<br>删<br>delete from 表名 where<br>改<br>update 数据表 set 字段1=‘值1’,字段2=‘值2’,字段3=‘值3’ where id=你要修改的数据ID</p>
 
     </article>
     <!-- license  -->
@@ -610,7 +613,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#索引"><span class="toc-number">1.</span> <span class="toc-text">索引</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#索引分类"><span class="toc-number">2.</span> <span class="toc-text">索引分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#隔离级别"><span class="toc-number">3.</span> <span class="toc-text">隔离级别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#事务的四大特性"><span class="toc-number">4.</span> <span class="toc-text">事务的四大特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三大范式"><span class="toc-number">5.</span> <span class="toc-text">三大范式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#varchar-和char的区别"><span class="toc-number">6.</span> <span class="toc-text">varchar 和char的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ER图"><span class="toc-number">7.</span> <span class="toc-text">ER图</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#索引"><span class="toc-number">1.</span> <span class="toc-text">索引</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#索引分类"><span class="toc-number">2.</span> <span class="toc-text">索引分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#隔离级别"><span class="toc-number">3.</span> <span class="toc-text">隔离级别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#事务的四大特性"><span class="toc-number">4.</span> <span class="toc-text">事务的四大特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三大范式"><span class="toc-number">5.</span> <span class="toc-text">三大范式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#varchar-和char的区别"><span class="toc-number">6.</span> <span class="toc-text">varchar 和char的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ER图"><span class="toc-number">7.</span> <span class="toc-text">ER图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#死锁"><span class="toc-number">8.</span> <span class="toc-text">死锁</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1274,9 +1277,33 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 41
+        Total : 43
         </div>
         <!-- search  -->
         
@@ -1289,6 +1316,16 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】41-缺失的第一个正数/">【Leetcode】41. 缺失的第一个正数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】42-接雨水/">【Leetcode】42. 接雨水</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1312,12 +1349,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
         </li>
     
     
@@ -1367,12 +1404,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
         </li>
     
     
@@ -1540,11 +1577,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="滑动窗口"><span class="iconfont-archer">&#xe606;</span>滑动窗口</span>
     
-        <span class="sidebar-tag-name" data-tags="困难"><span class="iconfont-archer">&#xe606;</span>困难</span>
-    
         <span class="sidebar-tag-name" data-tags="回溯"><span class="iconfont-archer">&#xe606;</span>回溯</span>
     
         <span class="sidebar-tag-name" data-tags="dfs"><span class="iconfont-archer">&#xe606;</span>dfs</span>
+    
+        <span class="sidebar-tag-name" data-tags="困难"><span class="iconfont-archer">&#xe606;</span>困难</span>
+    
+        <span class="sidebar-tag-name" data-tags="变换下标"><span class="iconfont-archer">&#xe606;</span>变换下标</span>
+    
+        <span class="sidebar-tag-name" data-tags="递减序列"><span class="iconfont-archer">&#xe606;</span>递减序列</span>
+    
+        <span class="sidebar-tag-name" data-tags="递增序列"><span class="iconfont-archer">&#xe606;</span>递增序列</span>
     
         <span class="sidebar-tag-name" data-tags="难"><span class="iconfont-archer">&#xe606;</span>难</span>
     
@@ -1554,27 +1597,27 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="lambd"><span class="iconfont-archer">&#xe606;</span>lambd</span>
     
-        <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
-    
-        <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
-    
-        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
-    
         <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
         <span class="sidebar-tag-name" data-tags="隔离级别"><span class="iconfont-archer">&#xe606;</span>隔离级别</span>
     
         <span class="sidebar-tag-name" data-tags="常用语句"><span class="iconfont-archer">&#xe606;</span>常用语句</span>
     
+        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
+    
+        <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
+    
+        <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
+    
         <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
+    
+        <span class="sidebar-tag-name" data-tags="英文表达"><span class="iconfont-archer">&#xe606;</span>英文表达</span>
     
         <span class="sidebar-tag-name" data-tags="C++面试知识点总结"><span class="iconfont-archer">&#xe606;</span>C++面试知识点总结</span>
     
         <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
     
         <span class="sidebar-tag-name" data-tags="各种树"><span class="iconfont-archer">&#xe606;</span>各种树</span>
-    
-        <span class="sidebar-tag-name" data-tags="英文表达"><span class="iconfont-archer">&#xe606;</span>英文表达</span>
     
         <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
     
@@ -1584,9 +1627,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="抽象类"><span class="iconfont-archer">&#xe606;</span>抽象类</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
-    
         <span class="sidebar-tag-name" data-tags="对象"><span class="iconfont-archer">&#xe606;</span>对象</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1629,15 +1672,15 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
-        <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
-    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
+    
+        <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
     
         <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
     
-        <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
-    
         <span class="sidebar-category-name" data-categories="专业术语"><span class="iconfont-archer">&#xe60a;</span>专业术语</span>
+    
+        <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
         <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
     
