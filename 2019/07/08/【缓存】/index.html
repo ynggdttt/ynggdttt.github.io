@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>【Leetcode】42. 接雨水 · 🏠</title>
+    <title>【缓存】 · 🏠</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">油腻高贵的唐怂怂的🏠</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">【Leetcode】42. 接雨水</a>
+                <a href="#" class="post-name">【缓存】</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            【Leetcode】42. 接雨水
+            【缓存】
             <!-- 404 -->
             
         </h1>
@@ -266,24 +266,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="困难">困难</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="递减序列">递减序列</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="递增序列">递增序列</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="缓存">缓存</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">286</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">39</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/07/06</span>
+                    <span class="post-intro-time">2019/07/08</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -407,14 +401,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="题目-组合总和-II"><a href="#题目-组合总和-II" class="headerlink" title="题目  组合总和 II"></a>题目  组合总和 II</h1><p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。<br><img src="/2019/07/06/【Leetcode】42-接雨水/接雨水.png" alt="【Leetcode】42-接雨水"></p>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [0,1,0,2,1,0,1,3,2,1,2,1]</span><br><span class="line">输出: 6</span><br></pre></td></tr></table></figure></p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ul>
-<li>首先找到最大的那个，然后分成左右两边；</li>
-<li>对左边的，从左向右遍历；如果比当前的值大，就替换，否则相减，就是当前的能盛水的；</li>
-<li>对右边的，从右向左遍历；如果比当前的值大，就替换，否则相减，就是当前的能盛水的；</li>
-</ul>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = height.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//找最大值</span></span><br><span class="line">        <span class="keyword">int</span> maxt = height[<span class="number">0</span>], index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(height[i] &gt; maxt)&#123;</span><br><span class="line">                maxt = height[i];</span><br><span class="line">                index = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//找左侧的</span></span><br><span class="line">        <span class="keyword">int</span> maxl = height[<span class="number">0</span>], res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; index; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(height[i] &gt; maxl) maxl = height[i];</span><br><span class="line">            <span class="keyword">else</span> res += maxl - height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//找右侧的</span></span><br><span class="line">        <span class="keyword">int</span> maxr = height[n - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = n <span class="number">-1</span>; i &gt; index; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(height[i] &gt; maxr) maxr = height[i];</span><br><span class="line">            <span class="keyword">else</span> res += maxr - height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h1 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h1><p>缓存是指可以进行高速数据交换的存储器，它先于内存与CPU交换数据，<br><a href="https://blog.csdn.net/weixin_43538815/article/details/84559933" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43538815/article/details/84559933</a></p>
 
     </article>
     <!-- license  -->
@@ -423,17 +410,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/07/08/【缓存】/" title="【缓存】">
-                    <div class="nextTitle">【缓存】</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/07/06/【Leetcode】41-缺失的第一个正数/" title="【Leetcode】41. 缺失的第一个正数">
-                    <div class="prevTitle">【Leetcode】41. 缺失的第一个正数</div>
+                <a href="/2019/07/06/【Leetcode】42-接雨水/" title="【Leetcode】42. 接雨水">
+                    <div class="prevTitle">【Leetcode】42. 接雨水</div>
                 </a>
             
         </li>
@@ -556,7 +538,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目-组合总和-II"><span class="toc-number">1.</span> <span class="toc-text">题目  组合总和 II</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-number">1.1.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#缓存"><span class="toc-number">1.</span> <span class="toc-text">缓存</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
