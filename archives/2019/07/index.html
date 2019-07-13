@@ -346,6 +346,89 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/07/13/【数据库引擎】/">
+            
+                <span>【数据库引擎】</span>
+        </a>
+        <div class="abstract-content">
+            什么是引擎数据库引擎是用于存储、处理和保护数据的核心服务。MySQL中的数据用各种不同的技术存储在文件(或者内存)中。这些技术中的每一种技术都使用不同的存储机制、索引技巧、锁定水平并且最终提供广泛的不同的功能和能力。
+
+如何存储数据
+如何为存储的数据建立索引
+如何更新、查询数据 等技术的实现方法。
+
+Mysql数据库的引擎InnoDBInnoDB是一个健壮的*事务型 存储引擎，这种存储引擎已经被很多互联网公司使用，为用户操作非常大的数据存储提供了一个强大的解决方案。使用场合
+
+更新密集的表。 InnoDB存储引擎特别适合处理多重并发的更新请求。
+事务。 InnoDB存储引擎是支持事务的标...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数据库">数据库</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="引擎">引擎</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/11/【Leetcode】66-加一/">
+            
+                <span>Leetcode】66. 加一</span>
+        </a>
+        <div class="abstract-content">
+            题目  加一给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+最高位数字存放在数组的首位， 数组中每个元素只存储一个数字。
+你可以假设除了整数 0 之外，这个整数不会以零开头。
+案例示例 1:123输入: [1,2,3]输出: [1,2,4]解释: 输入数组表示数字 123。
+思路
+考虑只有9+1才会进位；
+先从后往前，如果是是连续的9，就设置为0，直至不是9；
+然后把退出的那位+1；
+如果全是9，就在0的位置插入1；
+
+代码1234567891011121314class Solution &#123;public:    vector&lt;int&gt; plus...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="easy">easy</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/07/11/【Leetcode】64-最小路径和/">
             
                 <span>【Leetcode】64. 最小路径和</span>
@@ -641,84 +724,11 @@
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/06/【Leetcode】40-组合总和-II/">
-            
-                <span>【Leetcode】40. 组合总和 II</span>
-        </a>
-        <div class="abstract-content">
-            题目  组合总和 II给定一个数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
-candidates 中的每个数字在每个组合中只能使用一次。
-说明：
-所有数字（包括目标数）都是正整数。解集不能包含重复的组合。 
-案例示例 1:
-输入:12345678输入: candidates = [10,1,2,7,6,1,5], target = 8,所求解集为:[  [1, 7],  [1, 2, 5],  [2, 6],  [1, 1, 6]]
-案例2:123456输入: candidates = [2,5,2,1...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="回溯">回溯</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="dfs">dfs</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/06/【Leetcode】39-组合总和/">
-            
-                <span>【Leetcode】39. 组合总和</span>
-        </a>
-        <div class="abstract-content">
-            题目  组合总和给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
-candidates 中的数字可以无限制重复被选取。
-说明：所有数字（包括 target）都是正整数。解集不能包含重复的组合。 
-案例示例 1:
-输入:123456输入: candidates = [2,3,6,7], target = 7,所求解集为:[  [7],  [2,2,3]]
-示例 2:1234567输入: candidates = [2,3,5], target = 8,所求解集为:[  [2,2,2,2],...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="回溯">回溯</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="dfs">dfs</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/archives/2019/07/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/07/page/2/">NEXT &#62;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -1515,9 +1525,81 @@ candidates 中的数字可以无限制重复被选取。
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 48
+        Total : 50
         </div>
         <!-- search  -->
         
@@ -1533,12 +1615,22 @@ candidates 中的数字可以无限制重复被选取。
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】63-不同路径-II/">【Leetcode】63. 不同路径 II</a>
+            <span class="archive-post-date">07/13</span><a class="archive-post-title" href="/2019/07/13/【数据库引擎】/">【数据库引擎】</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】66-加一/">Leetcode】66. 加一</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】64-最小路径和/">【Leetcode】64. 最小路径和</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】63-不同路径-II/">【Leetcode】63. 不同路径 II</a>
         </li>
     
     
@@ -1558,12 +1650,12 @@ candidates 中的数字可以无限制重复被选取。
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】42-接雨水/">【Leetcode】42. 接雨水</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】41-缺失的第一个正数/">【Leetcode】41. 缺失的第一个正数</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】41-缺失的第一个正数/">【Leetcode】41. 缺失的第一个正数</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】42-接雨水/">【Leetcode】42. 接雨水</a>
         </li>
     
     
@@ -1588,12 +1680,12 @@ candidates 中的数字可以无限制重复被选取。
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
         </li>
     
     
@@ -1643,12 +1735,12 @@ candidates 中的数字可以无限制重复被选取。
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
         </li>
     
     
@@ -1722,6 +1814,16 @@ candidates 中的数字可以无限制重复被选取。
         </li>
     
     
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href="/2019/04/08/【Leetcode】101-Symmetric-Tree/">【Leetcode】101.Symmetric Tree</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
+        </li>
+    
+    
     
     
     
@@ -1746,17 +1848,7 @@ candidates 中的数字可以无限制重复被选取。
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/08</span><a class="archive-post-title" href="/2019/04/08/【Leetcode】101-Symmetric-Tree/">【Leetcode】101.Symmetric Tree</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
         </li>
     
     
@@ -1794,11 +1886,13 @@ candidates 中的数字可以无限制重复被选取。
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="语法"><span class="iconfont-archer">&#xe606;</span>语法</span>
-    
         <span class="sidebar-tag-name" data-tags="数组"><span class="iconfont-archer">&#xe606;</span>数组</span>
     
         <span class="sidebar-tag-name" data-tags="简单"><span class="iconfont-archer">&#xe606;</span>简单</span>
+    
+        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
+    
+        <span class="sidebar-tag-name" data-tags="语法"><span class="iconfont-archer">&#xe606;</span>语法</span>
     
         <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
@@ -1807,8 +1901,6 @@ candidates 中的数字可以无限制重复被选取。
         <span class="sidebar-tag-name" data-tags="中等"><span class="iconfont-archer">&#xe606;</span>中等</span>
     
         <span class="sidebar-tag-name" data-tags="双指针"><span class="iconfont-archer">&#xe606;</span>双指针</span>
-    
-        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
     
         <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
     
@@ -1834,6 +1926,8 @@ candidates 中的数字可以无限制重复被选取。
     
         <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="lambd"><span class="iconfont-archer">&#xe606;</span>lambd</span>
@@ -1842,11 +1936,15 @@ candidates 中的数字可以无限制重复被选取。
     
         <span class="sidebar-tag-name" data-tags="引用"><span class="iconfont-archer">&#xe606;</span>引用</span>
     
+        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
+    
         <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
     
         <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
     
-        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
+        <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
+    
+        <span class="sidebar-tag-name" data-tags="引擎"><span class="iconfont-archer">&#xe606;</span>引擎</span>
     
         <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
@@ -1874,9 +1972,9 @@ candidates 中的数字可以无限制重复被选取。
     
         <span class="sidebar-tag-name" data-tags="抽象类"><span class="iconfont-archer">&#xe606;</span>抽象类</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
-    
         <span class="sidebar-tag-name" data-tags="对象"><span class="iconfont-archer">&#xe606;</span>对象</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1911,9 +2009,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
-    
         <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
+    
+        <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
@@ -1921,9 +2019,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
     
-        <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
-    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
+    
+        <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
     
         <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
     
