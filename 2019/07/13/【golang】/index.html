@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>【Leetcode】39. 组合总和 · 🏠</title>
+    <title>【golang】 · 🏠</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">油腻高贵的唐怂怂的🏠</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">【Leetcode】39. 组合总和</a>
+                <a href="#" class="post-name">【golang】</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            【Leetcode】39. 组合总和
+            【golang】
             <!-- 404 -->
             
         </h1>
@@ -266,22 +266,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="回溯">回溯</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="dfs">dfs</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="golang">golang</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">341</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">626</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/07/06</span>
+                    <span class="post-intro-time">2019/07/13</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -405,24 +401,31 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="题目-组合总和"><a href="#题目-组合总和" class="headerlink" title="题目  组合总和"></a>题目  组合总和</h1><p>给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。</p>
-<p>candidates 中的数字可以无限制重复被选取。</p>
-<p>说明：<br>所有数字（包括 target）都是正整数。<br>解集不能包含重复的组合。 </p>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>示例 1:</p>
-<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入: candidates = [2,3,6,7], target = 7,</span><br><span class="line">所求解集为:</span><br><span class="line">[</span><br><span class="line">  [7],</span><br><span class="line">  [2,2,3]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入: candidates = [2,3,5], target = 8,</span><br><span class="line">所求解集为:</span><br><span class="line">[</span><br><span class="line">  [2,2,2,2],</span><br><span class="line">  [2,3,3],</span><br><span class="line">  [3,5]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ul>
-<li>很典型的dfs思想，回溯算法</li>
-</ul>
+        <p>golang</p>
 <ol>
-<li>三步，定义一个存储的中间变量，最终结果，起始位置；</li>
-<li>递归兜底条件是target == 0,或者target &lt; 0;</li>
-<li>回溯的过程记得pop出来，恢复上一个状态；</li>
+<li>go的调度<br>goroutine 协程（GPM模型）<br>就随机选择另外一个P，从其可执行的G队列中偷取一半（work-stealing调度算法）<br><a href="https://cloud.tencent.com/developer/article/1399244" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1399244</a><br><a href="https://www.cnblogs.com/wdliu/p/9272220.html" target="_blank" rel="noopener">https://www.cnblogs.com/wdliu/p/9272220.html</a></li>
 </ol>
-<ul>
-<li>关键的点在可以重复，所以递归的时候就是要从i开始；</li>
-</ul>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; combinationSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candidates, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt;res;</span><br><span class="line">        <span class="keyword">if</span>(target == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;cur;</span><br><span class="line">        helper(candidates,target,<span class="number">0</span>,res, cur);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candidates,<span class="keyword">int</span> target,<span class="keyword">int</span> start, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt;&amp;res,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;cur)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(target == <span class="number">0</span>)&#123;</span><br><span class="line">            res.push_back(cur);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(target &lt; <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = start; i &lt; candidates.size(); i++)&#123;</span><br><span class="line">            cur.push_back(candidates[i]);</span><br><span class="line">            helper(candidates, target - candidates[i], i, res, cur);</span><br><span class="line">            cur.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>channel 是符合类型<br>利用channel 来同步<br>可以用select在协程中进行选择；<br>如何关闭<br><a href="https://blog.csdn.net/qq_33296108/article/details/82731686" target="_blank" rel="noopener">https://blog.csdn.net/qq_33296108/article/details/82731686</a></p>
+<p>channel 缓冲<br>ch := make(chan int, n)</p>
+<ol start="2">
+<li>slice<br>相当于动态数据，维护struct；<br><a href="https://www.jianshu.com/p/19a38629b3d9" target="_blank" rel="noopener">https://www.jianshu.com/p/19a38629b3d9</a><br>copy 函数的话，就是覆盖前多少个；</li>
+<li>map</li>
+<li>key-value </li>
+<li>判断key是否存在；</li>
+<li>必须初始化；</li>
+<li>是引用类型；</li>
+<li>遍历是无序的；</li>
+<li>map顺序输出，把key存在数组里，然后再去输出；</li>
+<li>和c++的区别（红黑树和hashtable）</li>
+<li>map是非并发安全的；</li>
+<li>go的new和make区别<br><a href="https://www.jianshu.com/p/c173dab0e71c" target="_blank" rel="noopener">https://www.jianshu.com/p/c173dab0e71c</a><br>new和make都在堆上分配内存，但是它们的行为不同，适用于不同的类型。<br>new(T) 为每个新的类型T分配一片内存，初始化为 0 并且返回类型为*T的内存地址：这种方法 返回一个指向类型为 T，值为 0 的地址的指针，它适用于值类型如数组和结构体；它相当于 &amp;T{}。<br>make(T) 返回一个类型为 T 的初始值，它只适用于3种内建的引用类型：slice、map 和 channel。<br>换言之，new 函数分配内存，make 函数初始化；</li>
+<li>defer<br>在return之后执行的；后进先出；<br><a href="https://studygolang.com/articles/10167" target="_blank" rel="noopener">https://studygolang.com/articles/10167</a></li>
+<li>reflect<br><a href="https://www.cnblogs.com/cxiaojia/p/6193606.html" target="_blank" rel="noopener">https://www.cnblogs.com/cxiaojia/p/6193606.html</a><br>我用在数据库迁移，因为有很多的表，每次要从表中取出，然后再<br>Golang的指定类型的变量的类型是静态的（也就是指定int、string这些的变量，它的type是static type），在创建变量的时候就已经确定，反射主要与Golang的interface类型相关（它的type是concrete type），只有interface类型才有反射一说。<br>在Golang的实现中，每个interface变量都有一个对应pair，pair中记录了实际变量的值和类型:<br>(value, type)</li>
+<li>reflect.TypeOf： 直接给到了我们想要的type类型，如float64、int、各种pointer、struct 等等真实的类型</li>
+<li>reflect.ValueOf：直接给到了我们想要的具体的值，如1.2345这个具体数值，或者类似&amp;{1 “Allen.Wu” 25} 这样的结构体struct的值</li>
+<li>也就是说明反射可以将“接口类型变量”转换为“反射类型对象”，反射类型指的是reflect.Type和reflect.Value这两种</li>
+</ol>
+<p>为什么要序列化成json</p>
 
     </article>
     <!-- license  -->
@@ -431,17 +434,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/07/06/【Leetcode】40-组合总和-II/" title="【Leetcode】40. 组合总和 II">
-                    <div class="nextTitle">【Leetcode】40. 组合总和 II</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/06/29/【测试】/" title="【测试】">
-                    <div class="prevTitle">【测试】</div>
+                <a href="/2019/07/13/【内存泄漏】/" title="【内存泄漏】">
+                    <div class="prevTitle">【内存泄漏】</div>
                 </a>
             
         </li>
@@ -564,7 +562,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目-组合总和"><span class="toc-number">1.</span> <span class="toc-text">题目  组合总和</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-number">1.1.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
