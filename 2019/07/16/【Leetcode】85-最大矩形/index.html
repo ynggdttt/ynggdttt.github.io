@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>【Leetcode】57.Insert Interval · 🏠</title>
+    <title>【Leetcode】85. 最大矩形 · 🏠</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">油腻高贵的唐怂怂的🏠</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">【Leetcode】57.Insert Interval</a>
+                <a href="#" class="post-name">【Leetcode】85. 最大矩形</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            【Leetcode】57.Insert Interval
+            【Leetcode】85. 最大矩形
             <!-- 404 -->
             
         </h1>
@@ -268,18 +268,20 @@ height:50vh;
     
         <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="难">难</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="hard">hard</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">548</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">314</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/02/25</span>
+                    <span class="post-intro-time">2019/07/16</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -403,11 +405,13 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="题目-合并区间"><a href="#题目-合并区间" class="headerlink" title="题目 合并区间"></a>题目 合并区间</h1><p>给出一个无重叠的 ，按照区间起始端点排序的区间列表。<br>在列表中插入一个新的区间，你需要确保列表中的区间仍然有序且不重叠（如果有必要的话，可以合并区间）。</p>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: intervals = [[1,3],[6,9]], newInterval = [2,5]</span><br><span class="line">输出: [[1,5],[6,9]]</span><br></pre></td></tr></table></figure></p>
-<p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]</span><br><span class="line">输出: [[1,2],[3,10],[12,16]]</span><br><span class="line">解释: 这是因为新的区间 [4,8] 与 [3,5],[6,7],[8,10] 重叠。</span><br></pre></td></tr></table></figure></p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这个题和56题很像，唯一不同的就是是需要插入一个区间；<br>思考这样的一个问题，这个区间应该插在哪里，实际上应该插在，该区间的start比原区间数组中的某一个元素的start刚好大于或者等于的情况；<br>找到这个位置之后，就要考虑当前的插入区间是不是能直接插入还是需要和上一个区间合并，如果该区间的start比上一个区间的end要大的话，那么可以直接插入，或者还有一种特殊情况就是res中还没有区间，那么这两种情况都直接插入，否则的话就需要进行一次合并，合并的原则和<a href="https://ynggdttt.github.io/2019/02/24/%E3%80%90Leetcode%E3%80%9156-Merge-Intervals/" target="_blank" rel="noopener">56题</a>一样，就是将当前res尾部的区间的end修改成插入区间的end和res尾部的end中的较大的值；然后再对剩余的区间依次做合并操作，最终得到结果；</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for an interval.</span></span><br><span class="line"><span class="comment"> * struct Interval &#123;</span></span><br><span class="line"><span class="comment"> *     int start;</span></span><br><span class="line"><span class="comment"> *     int end;</span></span><br><span class="line"><span class="comment"> *     Interval() : start(0), end(0) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     Interval(int s, int e) : start(s), end(e) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;Interval&gt; insert(<span class="built_in">vector</span>&lt;Interval&gt;&amp; intervals, Interval newInterval) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;Interval&gt; res;</span><br><span class="line">        <span class="keyword">int</span> n = intervals.size();</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>) </span><br><span class="line">        &#123;</span><br><span class="line">            res.push_back(newInterval);</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>( ; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(newInterval.start &lt;= intervals[i].start)</span><br><span class="line">                <span class="keyword">break</span>;   </span><br><span class="line">            res.push_back(intervals[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">0</span> || newInterval.start &gt; intervals[i - <span class="number">1</span>].end)</span><br><span class="line">            res.push_back(newInterval);</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            res.back().end = max(newInterval.end, res.back().end);</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">for</span>(; i &lt; n; i++)&#123;</span><br><span class="line">             <span class="keyword">if</span>(res.back().end &lt; intervals[i].start)</span><br><span class="line">                 res.push_back(intervals[i]);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">               res.back().end = max(res.back().end, intervals[i].end);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h1 id="题目-最大矩形"><a href="#题目-最大矩形" class="headerlink" title="题目  最大矩形"></a>题目  最大矩形</h1><p>给定一个仅包含 0 和 1 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">[</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;]</span><br><span class="line">]</span><br><span class="line">输出: 6</span><br></pre></td></tr></table></figure></p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ul>
+<li>把每一层分别当成底部，算能形成的矩形的面试，就是84题一样的</li>
+<li>[84、柱状图中最大的矩形]（<a href="https://ynggdttt.github.io/2019/07/16/【Leetcode】84-柱状图中最大的矩形/）" target="_blank" rel="noopener">https://ynggdttt.github.io/2019/07/16/【Leetcode】84-柱状图中最大的矩形/）</a></li>
+</ul>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maximalRectangle</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; tem;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.size(); i++)&#123;</span><br><span class="line">            tem.resize(matrix[i].size());</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; tem.size(); j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(matrix[i][j] == <span class="string">'0'</span>)</span><br><span class="line">                    tem[j] = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    tem[j]++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> re = helper(tem);</span><br><span class="line">            res = max(res,re);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;tem)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = tem.size();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i + <span class="number">1</span> &lt; n &amp;&amp; tem[i] &lt; tem[i+<span class="number">1</span>])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> mi = tem[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &gt;= <span class="number">0</span>; j--)&#123;</span><br><span class="line">                mi = min(mi, tem[j]);</span><br><span class="line">                res = max(mi*(i - j + <span class="number">1</span>),res);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </article>
     <!-- license  -->
@@ -416,17 +420,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/03/03/【Leetcode】67-Add-Binary/" title="【Leetcode】67.Add Binary">
-                    <div class="nextTitle">【Leetcode】67.Add Binary</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/02/24/【Leetcode】56-Merge-Intervals/" title="【Leetcode】56. Merge Intervals">
-                    <div class="prevTitle">【Leetcode】56. Merge Intervals</div>
+                <a href="/2019/07/16/【Leetcode】84-柱状图中最大的矩形/" title="【Leetcode】84. 柱状图中最大的矩形">
+                    <div class="prevTitle">【Leetcode】84. 柱状图中最大的矩形</div>
                 </a>
             
         </li>
@@ -549,7 +548,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目-合并区间"><span class="toc-number">1.</span> <span class="toc-text">题目 合并区间</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-number">1.1.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目-最大矩形"><span class="toc-number">1.</span> <span class="toc-text">题目  最大矩形</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-number">1.1.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
