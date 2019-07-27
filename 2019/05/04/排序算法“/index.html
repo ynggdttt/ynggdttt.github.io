@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.6k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2k</span>阅读时长: <span class="post-count reading-time">9 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -489,7 +489,9 @@ height:50vh;
 <li>两个指针i,j，如果i小于主元，那么直接走，直到i大于位置；然后开始j–,直到j小于主元为止，最后的限制条件是i&lt;j;</li>
 <li>最终i的位置就是主元的位置；</li>
 </ol>
-<p><strong><em>极端情况</em></strong><br>如果是全相等的序列的话，如果停下来交换，最终主元是会被放在中间位置；O(NlogN）<br>但是如果是继续向前，最终主元就是倒数第一个位置，导致N^2;<br><strong><em>程序</em></strong><br>自己写的 还有点问题<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;arr,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">5</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>&#125;;</span><br><span class="line">   <span class="keyword">int</span> l = <span class="number">0</span>, r = arr.size()<span class="number">-1</span>;</span><br><span class="line">   helper(arr,l,r);</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> a:arr)&#123;</span><br><span class="line">       <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;arr,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"in"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">//选主元</span></span><br><span class="line">    <span class="keyword">if</span>(l == r || l &gt; r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid = l + (r - l);</span><br><span class="line">    <span class="keyword">if</span>(arr[l] &gt; arr[mid])</span><br><span class="line">        swap(arr[l],arr[mid]);</span><br><span class="line">    <span class="keyword">if</span>(arr[l] &gt; arr[r])</span><br><span class="line">        swap(arr[r],arr[l]);</span><br><span class="line">    <span class="keyword">if</span>(arr[mid] &gt; arr[r])</span><br><span class="line">        swap(arr[mid],arr[r]);</span><br><span class="line">    swap(arr[r - <span class="number">1</span>],arr[mid]);</span><br><span class="line">    <span class="comment">//找主元</span></span><br><span class="line">    <span class="keyword">int</span> i = l + <span class="number">1</span>, j = r - <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j &amp;&amp; arr[i] &lt; arr[r<span class="number">-1</span>]) i++;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j &amp;&amp; arr[j] &gt; arr[r<span class="number">-1</span>]) j--;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(arr[r - <span class="number">1</span>],arr[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> a:arr)&#123;</span><br><span class="line">       <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line">    helper(arr,l,i - <span class="number">1</span>);</span><br><span class="line">    helper(arr,i + <span class="number">1</span>,r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong><em>极端情况</em></strong><br>如果是全相等的序列的话，如果停下来交换，最终主元是会被放在中间位置；O(NlogN）<br>但是如果是继续向前，最终主元就是倒数第一个位置，导致N^2;<br><strong><em>程序</em></strong><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quicksort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;arr, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line">    quicksort(arr,<span class="number">0</span>,<span class="number">3</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;arr[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quicksort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;arr, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt; r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> t = arr[l], index = l,end = r;</span><br><span class="line">    l = l + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r &amp;&amp; arr[l] &lt; t) l++;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r &amp;&amp; arr[r] &gt; t) r--;</span><br><span class="line">        <span class="keyword">if</span>(l &lt; r)</span><br><span class="line">            swap(arr[l],arr[r]);</span><br><span class="line">    &#125;</span><br><span class="line">    swap(arr[r],arr[index]);</span><br><span class="line">    quicksort(arr, index, r <span class="number">-1</span>);</span><br><span class="line">    quicksort(arr, r+<span class="number">1</span>, end);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;arr,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line">   <span class="keyword">int</span> l = <span class="number">0</span>, r = arr.size()<span class="number">-1</span>;</span><br><span class="line">   helper(arr,l,r);</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> a:arr)&#123;</span><br><span class="line">       <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;arr,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="comment">//选主元</span></span><br><span class="line">    <span class="keyword">if</span>(l == r || l &gt; r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid = l + (r - l)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(arr[l] &gt; arr[mid])</span><br><span class="line">        swap(arr[l],arr[mid]);</span><br><span class="line">    <span class="keyword">if</span>(arr[mid] &gt; arr[r])</span><br><span class="line">        swap(arr[mid],arr[r]);</span><br><span class="line">    <span class="keyword">if</span>(arr[l] &gt; arr[mid])</span><br><span class="line">        swap(arr[mid],arr[l]);</span><br><span class="line">    swap(arr[r - <span class="number">1</span>],arr[mid]);</span><br><span class="line">    <span class="comment">//找主元</span></span><br><span class="line">    <span class="keyword">int</span> i = l + <span class="number">1</span>, j = r - <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j &amp;&amp; arr[i] &lt; arr[r<span class="number">-1</span>]) i++;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j &amp;&amp; arr[j] &gt; arr[r<span class="number">-1</span>]) j--;</span><br><span class="line">        <span class="keyword">if</span>(i &lt; j) swap(arr[i], arr[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(r<span class="number">-1</span> &gt; i) swap(arr[r - <span class="number">1</span>],arr[i]);<span class="comment">//一定要判断</span></span><br><span class="line">    helper(arr,l,i - <span class="number">1</span>);</span><br><span class="line">    helper(arr,i + <span class="number">1</span>,r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>非递归排序<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;arr,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line">   <span class="keyword">int</span> l = <span class="number">0</span>, r = arr.size()<span class="number">-1</span>;</span><br><span class="line">   <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">   s.push(l);</span><br><span class="line">   s.push(r);</span><br><span class="line">   <span class="keyword">while</span>(!s.empty())&#123;</span><br><span class="line">       <span class="keyword">int</span> right = s.top();</span><br><span class="line">       s.pop();</span><br><span class="line">       <span class="keyword">int</span> left = s.top();</span><br><span class="line">       s.pop();</span><br><span class="line">       <span class="keyword">if</span>(left &lt; right)&#123;</span><br><span class="line">           <span class="keyword">int</span> p = helper(arr,left, right);</span><br><span class="line">           s.push(left);</span><br><span class="line">           s.push(p - <span class="number">1</span>);</span><br><span class="line">           s.push(p+<span class="number">1</span>);</span><br><span class="line">           s.push(right);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">auto</span> a : arr)&#123;</span><br><span class="line">       <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;arr,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> mid = l + (r - l)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(arr[l] &gt; arr[mid])</span><br><span class="line">        swap(arr[l],arr[mid]);</span><br><span class="line">    <span class="keyword">if</span>(arr[mid] &gt; arr[r])</span><br><span class="line">        swap(arr[mid],arr[r]);</span><br><span class="line">    <span class="keyword">if</span>(arr[l] &gt; arr[mid])</span><br><span class="line">        swap(arr[mid],arr[l]);</span><br><span class="line">    swap(arr[r - <span class="number">1</span>],arr[mid]);</span><br><span class="line">    <span class="comment">//找主元</span></span><br><span class="line">    <span class="keyword">int</span> i = l + <span class="number">1</span>, j = r - <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j &amp;&amp; arr[i] &lt; arr[r<span class="number">-1</span>]) i++;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j &amp;&amp; arr[j] &gt; arr[r<span class="number">-1</span>]) j--;</span><br><span class="line">        <span class="keyword">if</span>(i &lt; j) swap(arr[i], arr[j]);</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="keyword">if</span>(r<span class="number">-1</span> &gt; i) swap(arr[r - <span class="number">1</span>],arr[i]);</span><br><span class="line">   <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="表排序"><a href="#表排序" class="headerlink" title="表排序"></a>表排序</h1><p>待排的是一个结构体，因为要频繁的移动，移动指针；<br>定义一个指针数组；<br>插入排序；<br><img src="/2019/05/04/排序算法“/表排序.png" alt="表排序"></p>
 <h1 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h1><ul>
 <li>桶排序</li>
@@ -1501,9 +1503,53 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 56
+        Total : 58
         </div>
         <!-- search  -->
         
@@ -1519,17 +1565,27 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/27</span><a class="archive-post-title" href="/2019/07/27/【Leetcode】144-二叉树的前序遍历/">【Leetcode】144. 二叉树的前序遍历</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/25</span><a class="archive-post-title" href="/2019/07/25/【Leetcode】94-二叉树的中序遍历/">【Leetcode】94. 二叉树的中序遍历</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/22</span><a class="archive-post-title" href="/2019/07/22/【面试】面向对象的理解/">【面试】面向对象的理解</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】85-最大矩形/">【Leetcode】85. 最大矩形</a>
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】84-柱状图中最大的矩形/">【Leetcode】84. 柱状图中最大的矩形</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】84-柱状图中最大的矩形/">【Leetcode】84. 柱状图中最大的矩形</a>
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】85-最大矩形/">【Leetcode】85. 最大矩形</a>
         </li>
     
     
@@ -1559,12 +1615,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】66-加一/">Leetcode】66. 加一</a>
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】63-不同路径-II/">【Leetcode】63. 不同路径 II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】63-不同路径-II/">【Leetcode】63. 不同路径 II</a>
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】66-加一/">Leetcode】66. 加一</a>
         </li>
     
     
@@ -1584,12 +1640,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】42-接雨水/">【Leetcode】42. 接雨水</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】41-缺失的第一个正数/">【Leetcode】41. 缺失的第一个正数</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】41-缺失的第一个正数/">【Leetcode】41. 缺失的第一个正数</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】42-接雨水/">【Leetcode】42. 接雨水</a>
         </li>
     
     
@@ -1654,12 +1710,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
         </li>
     
     
@@ -1669,12 +1725,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
         </li>
     
     
@@ -1778,29 +1834,6 @@ top:50vh;
         </li>
     
     
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/05/27/【Leetcode】5-最长回文子串/">【Leetcode】5. 最长回文子串</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
         <li class="archive-post-item">
             <span class="archive-post-date">02/23</span><a class="archive-post-title" href="/2019/02/23/关于c-push-pop小命令的笔记小抄/">关于c++ push ,pop小命令的笔记小抄</a>
         </li>
@@ -1813,6 +1846,20 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">02/21</span><a class="archive-post-title" href="/2019/02/21/【leetcode】36-Valid-Sudoku/">【leetcode】36. Valid Sudoku</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/05/27/【Leetcode】5-最长回文子串/">【Leetcode】5. 最长回文子串</a>
         </li>
     
     </ul></div>
@@ -1837,6 +1884,12 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="双指针"><span class="iconfont-archer">&#xe606;</span>双指针</span>
     
         <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
+    
+        <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
+    
+        <span class="sidebar-tag-name" data-tags="递归"><span class="iconfont-archer">&#xe606;</span>递归</span>
+    
+        <span class="sidebar-tag-name" data-tags="迭代"><span class="iconfont-archer">&#xe606;</span>迭代</span>
     
         <span class="sidebar-tag-name" data-tags="哈希"><span class="iconfont-archer">&#xe606;</span>哈希</span>
     
@@ -1863,8 +1916,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="难"><span class="iconfont-archer">&#xe606;</span>难</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
-    
-        <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
@@ -1908,11 +1959,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="英文表达"><span class="iconfont-archer">&#xe606;</span>英文表达</span>
     
-        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
-    
         <span class="sidebar-tag-name" data-tags="面试"><span class="iconfont-archer">&#xe606;</span>面试</span>
     
         <span class="sidebar-tag-name" data-tags="面向对象"><span class="iconfont-archer">&#xe606;</span>面向对象</span>
+    
+        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
     
         <span class="sidebar-tag-name" data-tags="多态"><span class="iconfont-archer">&#xe606;</span>多态</span>
     
@@ -1960,6 +2011,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
     
         <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
+    
+        <span class="sidebar-category-name" data-categories="Leetcode"><span class="iconfont-archer">&#xe60a;</span>Leetcode</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
