@@ -346,6 +346,33 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/30/【Leetcode】6-Z-字形变换/">
+            
+                <span>【Leetcode】6. Z 字形变换</span>
+        </a>
+        <div class="abstract-content">
+            题目  Z 字形变换将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。比如输入字符串为 “LEETCODEISHIRING” 行数为 3 时，排列如下：123L   C   I   RE T O E S I I GE   D   H   N
+之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”LCIRETOESIIGEDHN”。
+请你实现这个将字符串进行指定行数变换的函数：
+string convert(string s, int numRows);
+案例示例 1:12输入: s = &quot;LEETCODEISHIRING&quot;, numR...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/30</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/27/【Leetcode】5-最长回文子串/">
             
                 <span>【Leetcode】5. 最长回文子串</span>
@@ -613,13 +640,14 @@ Pulbic基类的Pulbic成员可以被以下访问：
                 <span>多态，虚函数，抽象类</span>
         </a>
         <div class="abstract-content">
-            多态
+            多态什么是多态？不同类的对同一函数的响应不同，不同类的对象的一个函数，多种实现；
+
 目的：提供程序的可扩充性，有些语言有继承的概念但是没有多态的概念，只能称为基于对象的语言，不能称为面向对象的语言；
 多态的表现形式：
 
 
 派生类的指针可以赋值给基类指针；（1）若该指针指向一个基类的对象，那么被调用是基类的虚函数;（2）若该指针指向一个派生类的对象，那么被调用的是派生类的虚函数。举例：
-12345678910111213class CBase &#123; public:    virtual void SomeVirtualFunction() &#123; &#125;&#125;;class CDerived:public CBase &#123;public...
+12345678910111213class CBase &#123; public:    virtual void SomeVirtualFunction() &#123; &#125;&#125;;c...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -666,41 +694,6 @@ Pulbic基类的Pulbic成员可以被以下访问：
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/22</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/22/【Leetcode】105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/">
-            
-                <span>【Leetcode】105. Construct Binary Tree from Preorder and Inorder Traversal</span>
-        </a>
-        <div class="abstract-content">
-            题目 判断是否是对称二叉树根据一棵树的前序遍历与中序遍历构造二叉树。你可以假设树中没有重复的元素。返回如下的二叉树：
-案例前序遍历 preorder = [3,9,20,15,7]中序遍历 inorder = [9,3,15,20,7]
-123453 / \9  20  /  \ 15   7
-思路这道题实际上就是前序遍历的是，中左右，中序遍历的顺序是左中右，那么前序遍历的第一个点就是根节点，我们在中序遍历的数组中找到根节点的位置，左边就是左子树，右边就是右子树，不断的递归；这个题之前做的时候，是每次都构造新的vector,但是这样就会爆栈溢出，实际上每次传递引用即可。
-代码123456...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="树">树</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="medium">medium</a>
-    
-</div>
             
         </div>
     </article>
@@ -1747,9 +1740,20 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 59
+        Total : 60
         </div>
         <!-- search  -->
         
@@ -1762,6 +1766,11 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/07</span><a class="archive-post-title" href="/2019/08/07/【static】/">【static】</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1785,12 +1794,12 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】85-最大矩形/">【Leetcode】85. 最大矩形</a>
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】84-柱状图中最大的矩形/">【Leetcode】84. 柱状图中最大的矩形</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】84-柱状图中最大的矩形/">【Leetcode】84. 柱状图中最大的矩形</a>
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】85-最大矩形/">【Leetcode】85. 最大矩形</a>
         </li>
     
     
@@ -1815,7 +1824,7 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】66-加一/">Leetcode】66. 加一</a>
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】64-最小路径和/">【Leetcode】64. 最小路径和</a>
         </li>
     
     
@@ -1825,7 +1834,7 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】64-最小路径和/">【Leetcode】64. 最小路径和</a>
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】66-加一/">Leetcode】66. 加一</a>
         </li>
     
     
@@ -1845,12 +1854,12 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】42-接雨水/">【Leetcode】42. 接雨水</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】41-缺失的第一个正数/">【Leetcode】41. 缺失的第一个正数</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】41-缺失的第一个正数/">【Leetcode】41. 缺失的第一个正数</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】42-接雨水/">【Leetcode】42. 接雨水</a>
         </li>
     
     
@@ -1875,12 +1884,12 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
         </li>
     
     
@@ -1930,12 +1939,12 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
         </li>
     
     
@@ -2084,12 +2093,6 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
         <span class="sidebar-tag-name" data-tags="medium"><span class="iconfont-archer">&#xe606;</span>medium</span>
     
-        <span class="sidebar-tag-name" data-tags="hard"><span class="iconfont-archer">&#xe606;</span>hard</span>
-    
-        <span class="sidebar-tag-name" data-tags="递归"><span class="iconfont-archer">&#xe606;</span>递归</span>
-    
-        <span class="sidebar-tag-name" data-tags="迭代"><span class="iconfont-archer">&#xe606;</span>迭代</span>
-    
         <span class="sidebar-tag-name" data-tags="中等"><span class="iconfont-archer">&#xe606;</span>中等</span>
     
         <span class="sidebar-tag-name" data-tags="双指针"><span class="iconfont-archer">&#xe606;</span>双指针</span>
@@ -2097,6 +2100,12 @@ Pulbic基类的Pulbic成员可以被以下访问：
         <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
     
         <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
+    
+        <span class="sidebar-tag-name" data-tags="递归"><span class="iconfont-archer">&#xe606;</span>递归</span>
+    
+        <span class="sidebar-tag-name" data-tags="迭代"><span class="iconfont-archer">&#xe606;</span>迭代</span>
+    
+        <span class="sidebar-tag-name" data-tags="hard"><span class="iconfont-archer">&#xe606;</span>hard</span>
     
         <span class="sidebar-tag-name" data-tags="哈希"><span class="iconfont-archer">&#xe606;</span>哈希</span>
     
@@ -2106,11 +2115,13 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
         <span class="sidebar-tag-name" data-tags="滑动窗口"><span class="iconfont-archer">&#xe606;</span>滑动窗口</span>
     
-        <span class="sidebar-tag-name" data-tags="困难"><span class="iconfont-archer">&#xe606;</span>困难</span>
-    
         <span class="sidebar-tag-name" data-tags="回溯"><span class="iconfont-archer">&#xe606;</span>回溯</span>
     
         <span class="sidebar-tag-name" data-tags="dfs"><span class="iconfont-archer">&#xe606;</span>dfs</span>
+    
+        <span class="sidebar-tag-name" data-tags="困难"><span class="iconfont-archer">&#xe606;</span>困难</span>
+    
+        <span class="sidebar-tag-name" data-tags="变换下标"><span class="iconfont-archer">&#xe606;</span>变换下标</span>
     
         <span class="sidebar-tag-name" data-tags="递减序列"><span class="iconfont-archer">&#xe606;</span>递减序列</span>
     
@@ -2118,13 +2129,21 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
         <span class="sidebar-tag-name" data-tags="难"><span class="iconfont-archer">&#xe606;</span>难</span>
     
-        <span class="sidebar-tag-name" data-tags="变换下标"><span class="iconfont-archer">&#xe606;</span>变换下标</span>
-    
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="lambd"><span class="iconfont-archer">&#xe606;</span>lambd</span>
+    
+        <span class="sidebar-tag-name" data-tags="C++面试知识点总结"><span class="iconfont-archer">&#xe606;</span>C++面试知识点总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="static"><span class="iconfont-archer">&#xe606;</span>static</span>
+    
+        <span class="sidebar-tag-name" data-tags="golang"><span class="iconfont-archer">&#xe606;</span>golang</span>
+    
+        <span class="sidebar-tag-name" data-tags="指针"><span class="iconfont-archer">&#xe606;</span>指针</span>
+    
+        <span class="sidebar-tag-name" data-tags="引用"><span class="iconfont-archer">&#xe606;</span>引用</span>
     
         <span class="sidebar-tag-name" data-tags="Cplusplus"><span class="iconfont-archer">&#xe606;</span>Cplusplus</span>
     
@@ -2134,11 +2153,7 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
         <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
     
-        <span class="sidebar-tag-name" data-tags="golang"><span class="iconfont-archer">&#xe606;</span>golang</span>
-    
-        <span class="sidebar-tag-name" data-tags="指针"><span class="iconfont-archer">&#xe606;</span>指针</span>
-    
-        <span class="sidebar-tag-name" data-tags="引用"><span class="iconfont-archer">&#xe606;</span>引用</span>
+        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
     
         <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
@@ -2146,29 +2161,25 @@ Pulbic基类的Pulbic成员可以被以下访问：
     
         <span class="sidebar-tag-name" data-tags="常用语句"><span class="iconfont-archer">&#xe606;</span>常用语句</span>
     
-        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
-    
         <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
     
         <span class="sidebar-tag-name" data-tags="引擎"><span class="iconfont-archer">&#xe606;</span>引擎</span>
-    
-        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
-    
-        <span class="sidebar-tag-name" data-tags="C++面试知识点总结"><span class="iconfont-archer">&#xe606;</span>C++面试知识点总结</span>
     
         <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
     
         <span class="sidebar-tag-name" data-tags="各种树"><span class="iconfont-archer">&#xe606;</span>各种树</span>
     
+        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
+    
         <span class="sidebar-tag-name" data-tags="缓存"><span class="iconfont-archer">&#xe606;</span>缓存</span>
-    
-        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
-    
-        <span class="sidebar-tag-name" data-tags="英文表达"><span class="iconfont-archer">&#xe606;</span>英文表达</span>
     
         <span class="sidebar-tag-name" data-tags="面试"><span class="iconfont-archer">&#xe606;</span>面试</span>
     
         <span class="sidebar-tag-name" data-tags="面向对象"><span class="iconfont-archer">&#xe606;</span>面向对象</span>
+    
+        <span class="sidebar-tag-name" data-tags="英文表达"><span class="iconfont-archer">&#xe606;</span>英文表达</span>
+    
+        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
     
         <span class="sidebar-tag-name" data-tags="多态"><span class="iconfont-archer">&#xe606;</span>多态</span>
     
@@ -2223,17 +2234,17 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
+        <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
+    
+        <span class="sidebar-category-name" data-categories="语言"><span class="iconfont-archer">&#xe60a;</span>语言</span>
+    
         <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
     
         <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
     
-        <span class="sidebar-category-name" data-categories="语言"><span class="iconfont-archer">&#xe60a;</span>语言</span>
-    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
-    
-        <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
         <span class="sidebar-category-name" data-categories="专业术语"><span class="iconfont-archer">&#xe60a;</span>专业术语</span>
     
