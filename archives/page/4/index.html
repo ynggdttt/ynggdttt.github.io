@@ -346,6 +346,102 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/06/29/【测试】/">
+            
+                <span>【测试】</span>
+        </a>
+        <div class="abstract-content">
+            测试方法
+单元测试完成最小的软件设计单元（模块）的验证工作，目标是确保模块被正确的编码，使用过程设计描述作为指南，对重要的控制路径进行测试以发现模块内的错误，通常情况下是白盒的，对代码风格和规则、程序设计和结构、业务逻辑等进行静态测试，及早的发现和解决不易显现的错误。
+集成测试应当避免一次性的集成（除非软件规模很小），而采用增量集成。自顶向下集成：模块集成的顺序是首先集成主模块，然后按照控制层次结构向下进行集成，隶属于主模块的模块按照深度优先或广度优先的方式集成到整个结构中去。
+
+自底向上集成：从原子模块开始来进行构造和测试，因为模块是自底向上集成的，进行时要求所有隶属于某个给顶层次的模...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="测试">测试</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/29/【数据库sql】/">
+            
+                <span>【数据库sql】</span>
+        </a>
+        <div class="abstract-content">
+            创建数据库CREATE SCHEMA T;
+删除数据库DROP SCHEMA &lt;模式名&gt; &lt;CASCADE|RESTRICT&gt;//级联和限制级联就是直接都删除限制是只有表都删除了，才能删除
+定义表CREATE TABLE &lt;表名&gt; / 基本表的名称 /(&lt;列名&gt; &lt;数据类型&gt;[ &lt;列级完整性约束条件&gt; ] /组成该表的列/[,&lt;列名&gt; &lt;数据类型&gt;[ &lt;列级完整性约束条件&gt;] ]…[,&lt;表级完整性约束条件&gt; ] );
+Create table Student(Sno C...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="常考语句">常考语句</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/29/【c-】/">
+            
+                <span>【c#】</span>
+        </a>
+        <div class="abstract-content">
+            lambda简化了匿名委托的使用；lambda运算符：所有的lambda表达式都是用新的lambda运算符 “ =&gt; “,可以叫他，“转到”或者 “成为”。运算符将表达式分为两部分，左边指定输入参数，右边是lambda的主体。
+lambda表达式：1.一个参数：param=&gt;expr2.多个参数：（param-list）=&gt;expr
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="lambd">lambd</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/06/29/【红黑树】/">
             
                 <span>【红黑树】</span>
@@ -501,13 +597,11 @@ FIFO：任何进程间都能通讯，但速度慢
         </a>
         <div class="abstract-content">
             常用语法
-查看进程ps -ef//-e显示系统内的所有进程信息。-f使用完整的（full）格式显示进程信息。
+查看进程ps -ef//-e显示系统内的所有进程信息。-f使用完整的（full）格式显示进程信息。ps -ef -a的详细说明https://www.cnblogs.com/ericli-ericli/p/8144934.html
 杀死进程kill -15 //正常退出kill -9 //强制退出
 怎么批量杀死进程，ps aux|grep python|grep -v grep|cut -c 9-15|xargs kill -15
 看进程号ps -a | grep “cmdname”
-批量替换指定文件夹中所有文件的指定内容命令：sed -i “s/查找字段/替换字段/g” grep 查找字段 -rl 路径 文件名功能：用来替换当前目录VEROMODA文件夹及子文件夹中所有文件中的https为http.
-
-说...
+批量替换指定文件夹中所有文件的指定内容命令：sed -i “s/查找字段/替换字段/g” gr...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -588,115 +682,9 @@ FIFO：任何进程间都能通讯，但速度慢
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="中等">中等</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="双指针">双指针</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/22/【Leetcode】27-移除元素/">
-            
-                <span>【Leetcode】27. 移除元素</span>
-        </a>
-        <div class="abstract-content">
-            题目  移除元素给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。
-不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
-元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
-案例示例 1:12345给定 nums = [3,2,2,3], val = 3,函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。
-示例 2:1234567给定 nums = [0,1,2,2,3,0,4,2], val = 2,函数应该返回新的长度 ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组 - 中等 - 双指针">数组 - 中等 - 双指针</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/22/【Leetcode】26-删除排序数组中的重复项/">
-            
-                <span>【Leetcode】26. 删除排序数组中的重复项</span>
-        </a>
-        <div class="abstract-content">
-            题目  删除排序数组中的重复项给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
-不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
-案例示例 1:12345给定数组 nums = [1,1,2], 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 你不需要考虑数组中超出新长度后面的元素。
-示例 2:12345给定 nums = [0,0,1,1,1,2,2,3,3,4],函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="中等">中等</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="双指针">双指针</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/21/【Leetcode】18-四数之和/">
-            
-                <span>【Leetcode】18. 四数之和</span>
-        </a>
-        <div class="abstract-content">
-            题目  四数之和给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，b，c 和 d ，使得 a + b + c + d 的值与 target 相等？找出所有满足条件且不重复的四元组。注意 答案中不可以包含重复的四元组。
-案例示例 1:12345678给定数组 nums = [1, 0, -1, 0, -2, 2]，和 target = 0。满足要求的四元组集合为：[  [-1,  0, 0, 1],  [-2, -1, 1, 2],  [-2,  0, 0, 2]]
-思路和题目【Leetcode】15-3Sum比较相近；
-
-将数组...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="中等">中等</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="双指针">双指针</a>
     
@@ -1769,9 +1757,160 @@ FIFO：任何进程间都能通讯，但速度慢
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 65
+        Total : 68
         </div>
         <!-- search  -->
         
@@ -1784,6 +1923,21 @@ FIFO：任何进程间都能通讯，但速度慢
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/21</span><a class="archive-post-title" href="/2019/08/21/【智力题】/">【智力题】</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/2019/08/17/【数据库语句】-嵌套查询/">【数据库语句】--嵌套查询</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/2019/08/17/【数据库语句】-链接/">【数据库语句】--链接</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1867,17 +2021,17 @@ FIFO：任何进程间都能通讯，但速度慢
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】64-最小路径和/">【Leetcode】64. 最小路径和</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】66-加一/">Leetcode】66. 加一</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】63-不同路径-II/">【Leetcode】63. 不同路径 II</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】64-最小路径和/">【Leetcode】64. 最小路径和</a>
         </li>
     
     
@@ -1897,12 +2051,12 @@ FIFO：任何进程间都能通讯，但速度慢
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】41-缺失的第一个正数/">【Leetcode】41. 缺失的第一个正数</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】42-接雨水/">【Leetcode】42. 接雨水</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】42-接雨水/">【Leetcode】42. 接雨水</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】41-缺失的第一个正数/">【Leetcode】41. 缺失的第一个正数</a>
         </li>
     
     
@@ -1967,12 +2121,12 @@ FIFO：任何进程间都能通讯，但速度慢
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
         </li>
     
     
@@ -1982,12 +2136,12 @@ FIFO：任何进程间都能通讯，但速度慢
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
         </li>
     
     
@@ -2067,12 +2221,12 @@ FIFO：任何进程间都能通讯，但速度慢
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
         </li>
     
     
@@ -2124,25 +2278,23 @@ FIFO：任何进程间都能通讯，但速度慢
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="语法"><span class="iconfont-archer">&#xe606;</span>语法</span>
+        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
     
         <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
     
         <span class="sidebar-tag-name" data-tags="指针"><span class="iconfont-archer">&#xe606;</span>指针</span>
     
-        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
-    
-        <span class="sidebar-tag-name" data-tags="medium"><span class="iconfont-archer">&#xe606;</span>medium</span>
-    
-        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
-    
-        <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
-    
-        <span class="sidebar-tag-name" data-tags="中等"><span class="iconfont-archer">&#xe606;</span>中等</span>
+        <span class="sidebar-tag-name" data-tags="语法"><span class="iconfont-archer">&#xe606;</span>语法</span>
     
         <span class="sidebar-tag-name" data-tags="数组"><span class="iconfont-archer">&#xe606;</span>数组</span>
     
         <span class="sidebar-tag-name" data-tags="简单"><span class="iconfont-archer">&#xe606;</span>简单</span>
+    
+        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
+    
+        <span class="sidebar-tag-name" data-tags="medium"><span class="iconfont-archer">&#xe606;</span>medium</span>
+    
+        <span class="sidebar-tag-name" data-tags="中等"><span class="iconfont-archer">&#xe606;</span>中等</span>
     
         <span class="sidebar-tag-name" data-tags="双指针"><span class="iconfont-archer">&#xe606;</span>双指针</span>
     
@@ -2152,11 +2304,17 @@ FIFO：任何进程间都能通讯，但速度慢
     
         <span class="sidebar-tag-name" data-tags="迭代"><span class="iconfont-archer">&#xe606;</span>迭代</span>
     
+        <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
+    
+        <span class="sidebar-tag-name" data-tags="哈希"><span class="iconfont-archer">&#xe606;</span>哈希</span>
+    
         <span class="sidebar-tag-name" data-tags="hard"><span class="iconfont-archer">&#xe606;</span>hard</span>
     
-        <span class="sidebar-tag-name" data-tags="滑动窗口"><span class="iconfont-archer">&#xe606;</span>滑动窗口</span>
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
         <span class="sidebar-tag-name" data-tags="数组 - 中等 - 双指针"><span class="iconfont-archer">&#xe606;</span>数组 - 中等 - 双指针</span>
+    
+        <span class="sidebar-tag-name" data-tags="滑动窗口"><span class="iconfont-archer">&#xe606;</span>滑动窗口</span>
     
         <span class="sidebar-tag-name" data-tags="回溯"><span class="iconfont-archer">&#xe606;</span>回溯</span>
     
@@ -2171,10 +2329,6 @@ FIFO：任何进程间都能通讯，但速度慢
         <span class="sidebar-tag-name" data-tags="递增序列"><span class="iconfont-archer">&#xe606;</span>递增序列</span>
     
         <span class="sidebar-tag-name" data-tags="难"><span class="iconfont-archer">&#xe606;</span>难</span>
-    
-        <span class="sidebar-tag-name" data-tags="哈希"><span class="iconfont-archer">&#xe606;</span>哈希</span>
-    
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
     
@@ -2194,21 +2348,15 @@ FIFO：任何进程间都能通讯，但速度慢
     
         <span class="sidebar-tag-name" data-tags="引用"><span class="iconfont-archer">&#xe606;</span>引用</span>
     
-        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
-    
         <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
     
         <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
     
-        <span class="sidebar-tag-name" data-tags="面试"><span class="iconfont-archer">&#xe606;</span>面试</span>
-    
-        <span class="sidebar-tag-name" data-tags="模版"><span class="iconfont-archer">&#xe606;</span>模版</span>
+        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
     
         <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
     
         <span class="sidebar-tag-name" data-tags="引擎"><span class="iconfont-archer">&#xe606;</span>引擎</span>
-    
-        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
     
         <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
@@ -2216,17 +2364,33 @@ FIFO：任何进程间都能通讯，但速度慢
     
         <span class="sidebar-tag-name" data-tags="常用语句"><span class="iconfont-archer">&#xe606;</span>常用语句</span>
     
+        <span class="sidebar-tag-name" data-tags="智力题"><span class="iconfont-archer">&#xe606;</span>智力题</span>
+    
+        <span class="sidebar-tag-name" data-tags="嵌套查询"><span class="iconfont-archer">&#xe606;</span>嵌套查询</span>
+    
+        <span class="sidebar-tag-name" data-tags="连接两个表"><span class="iconfont-archer">&#xe606;</span>连接两个表</span>
+    
+        <span class="sidebar-tag-name" data-tags="面试"><span class="iconfont-archer">&#xe606;</span>面试</span>
+    
+        <span class="sidebar-tag-name" data-tags="模版"><span class="iconfont-archer">&#xe606;</span>模版</span>
+    
+        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
+    
         <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
     
         <span class="sidebar-tag-name" data-tags="各种树"><span class="iconfont-archer">&#xe606;</span>各种树</span>
     
+        <span class="sidebar-tag-name" data-tags="缓存"><span class="iconfont-archer">&#xe606;</span>缓存</span>
+    
         <span class="sidebar-tag-name" data-tags="继承"><span class="iconfont-archer">&#xe606;</span>继承</span>
     
-        <span class="sidebar-tag-name" data-tags="缓存"><span class="iconfont-archer">&#xe606;</span>缓存</span>
+        <span class="sidebar-tag-name" data-tags="英文表达"><span class="iconfont-archer">&#xe606;</span>英文表达</span>
+    
+        <span class="sidebar-tag-name" data-tags="面向对象"><span class="iconfont-archer">&#xe606;</span>面向对象</span>
     
         <span class="sidebar-tag-name" data-tags="输入输出"><span class="iconfont-archer">&#xe606;</span>输入输出</span>
     
-        <span class="sidebar-tag-name" data-tags="面向对象"><span class="iconfont-archer">&#xe606;</span>面向对象</span>
+        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
     
         <span class="sidebar-tag-name" data-tags="多态"><span class="iconfont-archer">&#xe606;</span>多态</span>
     
@@ -2235,10 +2399,6 @@ FIFO：任何进程间都能通讯，但速度慢
         <span class="sidebar-tag-name" data-tags="抽象类"><span class="iconfont-archer">&#xe606;</span>抽象类</span>
     
         <span class="sidebar-tag-name" data-tags="对象"><span class="iconfont-archer">&#xe606;</span>对象</span>
-    
-        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
-    
-        <span class="sidebar-tag-name" data-tags="英文表达"><span class="iconfont-archer">&#xe606;</span>英文表达</span>
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
@@ -2275,11 +2435,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
+        <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
     
         <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
     
-        <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
+        <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
     
         <span class="sidebar-category-name" data-categories="Leetcode"><span class="iconfont-archer">&#xe60a;</span>Leetcode</span>
     
@@ -2293,9 +2453,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
     
+        <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
+    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
+        <span class="sidebar-category-name" data-categories="智力题"><span class="iconfont-archer">&#xe60a;</span>智力题</span>
     
         <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
     

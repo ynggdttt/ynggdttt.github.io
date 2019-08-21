@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.4k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.8k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -414,8 +414,10 @@ height:50vh;
 </ul>
 <h1 id="查询语句"><a href="#查询语句" class="headerlink" title="查询语句"></a>查询语句</h1><p>SELECT [ALL|DISTINCT] &lt;目标列表达式&gt;[,&lt;目标列表达式&gt;] …<br>FROM &lt;表名或视图名&gt;[,&lt;表名或视图名&gt; ]…|(SELECT 语句)<br>[AS]&lt;别名&gt;<br>[ WHERE &lt;条件表达式&gt; ]<br>[ GROUP BY &lt;列名1&gt; [ HAVING &lt;条件表达式&gt; ] ]<br>[ ORDER BY &lt;列名2&gt; [ ASC|DESC ] ];</p>
 <ul>
-<li><p>用小写字母输出 lower<br>例子：<br>查询全体学生的姓名、出生年份和所在的院系，要<br>求用小写字母表示系名。<br>SELECT Sname,’Year of Birth: ‘<br>,2014-Sage,LOWER(Sdept)<br>FROM Student;<br>输出结果：<br>Sname ‘Year of Birth:’ 2014-Sage LOWER(Sdept)<br>李勇 Year of Birth: 1994 cs<br>刘晨 Year of Birth: 1995 cs<br>王敏 Year of Birth: 1996 ma<br>张立 Year of Birth: 1995 is</p>
-</li>
+<li>用小写字母输出 lower<br>例子：<br>查询全体学生的姓名、出生年份和所在的院系，要<br>求用小写字母表示系名。<br>Year of Birth: ‘就是个常量</li>
+</ul>
+<p>SELECT Sname,’Year of Birth: ‘<br>,2014-Sage,LOWER(Sdept)<br>FROM Student;<br>输出结果：<br>Sname ‘Year of Birth:’ 2014-Sage LOWER(Sdept)<br>李勇 Year of Birth: 1994 cs<br>刘晨 Year of Birth: 1995 cs<br>王敏 Year of Birth: 1996 ma<br>张立 Year of Birth: 1995 is</p>
+<ul>
 <li><p>重新命名各个列  别名<br>SELECT Sname NAME,’Year of Birth:’ BIRTH,<br>2014-Sage BIRTHDAY,LOWER(Sdept) DEPARTMENT<br>FROM Student;<br>输出结果：<br>NAME BIRTH BIRTHDAY DEPARTMENT<br>李勇 Year of Birth: 1994 cs<br>刘晨 Year of Birth: 1995 cs<br>王敏 Year of Birth: 1996 ma<br>张立 Year of Birth: 1995 is</p>
 </li>
 <li><p>消除重复的distinct</p>
@@ -428,9 +430,31 @@ height:50vh;
 <li>% （百分号） 代表任意长度（长度可以为0）的字符串<br>例如a%b表示以a开头，以b结尾的任意长度的字符串</li>
 <li><p>_ （下横线） 代表任意单个字符。<br>例如a_b表示以a开头，以b结尾的长度为3的任意字符串</p>
 </li>
-<li><p>使用换码字符将通配符转义为普通字符<br>[例3.34] 查询DB_Design课程的课程号和学分。<br>SELECT Cno，Ccredit<br>FROM Course<br>WHERE Cname LIKE ‘DB_Design’ ESCAPE ‘\ ‘ ;</p>
+<li><p>使用换码字符将通配符转义为普通字符ESCAPE<br>[例3.34] 查询DB_Design课程的课程号和学分。<br>SELECT Cno，Ccredit<br>FROM Course<br>WHERE Cname LIKE ‘DB_Design’ ESCAPE ‘\ ‘ ;</p>
 </li>
 </ol>
+<h1 id="确定范围"><a href="#确定范围" class="headerlink" title="确定范围"></a>确定范围</h1><p>谓词: BETWEEN … AND …<br>NOT BETWEEN … AND …</p>
+<h1 id="涉及空值的查询不能用"><a href="#涉及空值的查询不能用" class="headerlink" title="涉及空值的查询不能用="></a>涉及空值的查询不能用=</h1><p>： IS NULL 或 IS NOT NULL<br>“IS” 不能用 “=” 代替<br>SELECT Sno，Cno<br>FROM SC<br>WHERE Grade IS NUL</p>
+<h1 id="多重条件查询-AND-OR"><a href="#多重条件查询-AND-OR" class="headerlink" title="多重条件查询 AND OR"></a>多重条件查询 AND OR</h1><p>逻辑运算符：AND和 OR来连接多个查询条件<br> AND的优先级高于OR<br> 可以用括号改变优先级</p>
+<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><p>order by desc 和 asc</p>
+<ul>
+<li>可以查询两个<br>查询全体学生情况，查询结果按所在系的系号升序<br>排列，同一系中的学生按年龄降序排列。<br>SELECT *<br>FROM Student<br>ORDER BY Sdept, Sage DESC; </li>
+</ul>
+<h1 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h1><p>count, sum ,avg, max, min<br><img src="/2019/06/29/【数据库sql】/数据库sql】/聚集函数.png" alt="聚集函数"></p>
+<ol>
+<li>查询学生总人数<br>SELECT COUNT(*)<br>FROM Student;</li>
+<li>查询选修了课程的学生人数。<br>SELECT COUNT(DISTINCT Sno)<br>FROM SC;</li>
+<li>计算1号课程的学生平均成绩<br>SELECT AVG(Grade)<br>FROM SC<br>WHERE Cno=’1’</li>
+<li>查询选修1号课程的学生最高分数。<br>SELECT MAX(Grade)<br>FROM SC<br>WHERE Cno=’1’;<h1 id="GROUP-BY子句"><a href="#GROUP-BY子句" class="headerlink" title="GROUP BY子句"></a>GROUP BY子句</h1></li>
+</ol>
+<ul>
+<li><p>查询选修了3门以上课程的学生学号。<br>SELECT Sno<br>FROM SC<br>GROUP BY Sno<br>Having Count(*) &gt; 3</p>
+</li>
+<li><p>查询平均成绩大于等于90分的学生学号和平均成绩<br>SELECT Sno, AVG(Grade)<br>FROM SC<br>WHERE AVG(Grade)&gt;=90<br>GROUP BY Sno;//错误</p>
+</li>
+</ul>
+<p>SELECT Sno, AVG(Grade)<br>FROM SC<br>GROUP BY Sno<br>HAVING AVG(Grade) &gt; 90;<br><strong><em>HAVING短语与WHERE子句的区别：</em></strong><br> 作用对象不同<br> WHERE子句作用于基表或视图，从中选择满足条件的元组<br> HAVING短语作用于组，从中选择满足条件的组。<br>列出计算机系姓刘的同学的信息，按照学号大小排序<br>SELECT *<br>FROM STUDENT<br>WHERE Sdept=‘CS’ AND NAME LIKE ‘刘%’<br>ORDER BY Sno</p>
+<p>按系并区分男女统计各系学生的人数、并按照人数降序排序<br>SELECT Ssex, Sdep, Count(Sno)<br>GROUP BY Ssex, Sdep,<br>Order By Count(Sno) Desc</p>
 <p><a href="https://www.cnblogs.com/diffrent/p/8854995.html" target="_blank" rel="noopener">https://www.cnblogs.com/diffrent/p/8854995.html</a></p>
 <ol>
 <li>用一条SQL 语句 查询出每门课都大于80 分的学生姓名</li>
@@ -588,7 +612,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建数据库"><span class="toc-number">1.</span> <span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#删除数据库"><span class="toc-number">2.</span> <span class="toc-text">删除数据库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#定义表"><span class="toc-number">3.</span> <span class="toc-text">定义表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#修改表"><span class="toc-number">4.</span> <span class="toc-text">修改表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#索引"><span class="toc-number">5.</span> <span class="toc-text">索引</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查询语句"><span class="toc-number">6.</span> <span class="toc-text">查询语句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用查询条件"><span class="toc-number">7.</span> <span class="toc-text">常用查询条件</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建数据库"><span class="toc-number">1.</span> <span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#删除数据库"><span class="toc-number">2.</span> <span class="toc-text">删除数据库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#定义表"><span class="toc-number">3.</span> <span class="toc-text">定义表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#修改表"><span class="toc-number">4.</span> <span class="toc-text">修改表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#索引"><span class="toc-number">5.</span> <span class="toc-text">索引</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查询语句"><span class="toc-number">6.</span> <span class="toc-text">查询语句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用查询条件"><span class="toc-number">7.</span> <span class="toc-text">常用查询条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#确定范围"><span class="toc-number">8.</span> <span class="toc-text">确定范围</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#涉及空值的查询不能用"><span class="toc-number">9.</span> <span class="toc-text">涉及空值的查询不能用=</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多重条件查询-AND-OR"><span class="toc-number">10.</span> <span class="toc-text">多重条件查询 AND OR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#排序"><span class="toc-number">11.</span> <span class="toc-text">排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#聚集函数"><span class="toc-number">12.</span> <span class="toc-text">聚集函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GROUP-BY子句"><span class="toc-number">13.</span> <span class="toc-text">GROUP BY子句</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1560,9 +1584,160 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 65
+        Total : 68
         </div>
         <!-- search  -->
         
@@ -1575,6 +1750,21 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/21</span><a class="archive-post-title" href="/2019/08/21/【智力题】/">【智力题】</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/2019/08/17/【数据库语句】-嵌套查询/">【数据库语句】--嵌套查询</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/2019/08/17/【数据库语句】-链接/">【数据库语句】--链接</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1658,17 +1848,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】64-最小路径和/">【Leetcode】64. 最小路径和</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】66-加一/">Leetcode】66. 加一</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】63-不同路径-II/">【Leetcode】63. 不同路径 II</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】64-最小路径和/">【Leetcode】64. 最小路径和</a>
         </li>
     
     
@@ -1688,12 +1878,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】41-缺失的第一个正数/">【Leetcode】41. 缺失的第一个正数</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】42-接雨水/">【Leetcode】42. 接雨水</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】42-接雨水/">【Leetcode】42. 接雨水</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】41-缺失的第一个正数/">【Leetcode】41. 缺失的第一个正数</a>
         </li>
     
     
@@ -1758,12 +1948,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】27-移除元素/">【Leetcode】27. 移除元素</a>
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href="/2019/06/22/【Leetcode】31-下一个排列/">【Leetcode】31. 下一个排列</a>
         </li>
     
     
@@ -1773,12 +1963,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】18-四数之和/">【Leetcode】18. 四数之和</a>
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/【Leetcode】16-最接近的三数之和/">【Leetcode】16. 最接近的三数之和</a>
         </li>
     
     
@@ -1858,12 +2048,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】81-Search-in-Rotated-Sorted-Array-II/">【Leetcode】81. Search in Rotated Sorted Array II</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/">【Leetcode】33. Search in Rotated Sorted Array</a>
         </li>
     
     
@@ -1915,25 +2105,23 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="语法"><span class="iconfont-archer">&#xe606;</span>语法</span>
+        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
     
         <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
     
         <span class="sidebar-tag-name" data-tags="指针"><span class="iconfont-archer">&#xe606;</span>指针</span>
     
-        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
-    
-        <span class="sidebar-tag-name" data-tags="medium"><span class="iconfont-archer">&#xe606;</span>medium</span>
-    
-        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
-    
-        <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
-    
-        <span class="sidebar-tag-name" data-tags="中等"><span class="iconfont-archer">&#xe606;</span>中等</span>
+        <span class="sidebar-tag-name" data-tags="语法"><span class="iconfont-archer">&#xe606;</span>语法</span>
     
         <span class="sidebar-tag-name" data-tags="数组"><span class="iconfont-archer">&#xe606;</span>数组</span>
     
         <span class="sidebar-tag-name" data-tags="简单"><span class="iconfont-archer">&#xe606;</span>简单</span>
+    
+        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
+    
+        <span class="sidebar-tag-name" data-tags="medium"><span class="iconfont-archer">&#xe606;</span>medium</span>
+    
+        <span class="sidebar-tag-name" data-tags="中等"><span class="iconfont-archer">&#xe606;</span>中等</span>
     
         <span class="sidebar-tag-name" data-tags="双指针"><span class="iconfont-archer">&#xe606;</span>双指针</span>
     
@@ -1943,11 +2131,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="迭代"><span class="iconfont-archer">&#xe606;</span>迭代</span>
     
+        <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
+    
+        <span class="sidebar-tag-name" data-tags="哈希"><span class="iconfont-archer">&#xe606;</span>哈希</span>
+    
         <span class="sidebar-tag-name" data-tags="hard"><span class="iconfont-archer">&#xe606;</span>hard</span>
     
-        <span class="sidebar-tag-name" data-tags="滑动窗口"><span class="iconfont-archer">&#xe606;</span>滑动窗口</span>
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
         <span class="sidebar-tag-name" data-tags="数组 - 中等 - 双指针"><span class="iconfont-archer">&#xe606;</span>数组 - 中等 - 双指针</span>
+    
+        <span class="sidebar-tag-name" data-tags="滑动窗口"><span class="iconfont-archer">&#xe606;</span>滑动窗口</span>
     
         <span class="sidebar-tag-name" data-tags="回溯"><span class="iconfont-archer">&#xe606;</span>回溯</span>
     
@@ -1962,10 +2156,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="递增序列"><span class="iconfont-archer">&#xe606;</span>递增序列</span>
     
         <span class="sidebar-tag-name" data-tags="难"><span class="iconfont-archer">&#xe606;</span>难</span>
-    
-        <span class="sidebar-tag-name" data-tags="哈希"><span class="iconfont-archer">&#xe606;</span>哈希</span>
-    
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
     
@@ -1985,21 +2175,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="引用"><span class="iconfont-archer">&#xe606;</span>引用</span>
     
-        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
-    
         <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
     
         <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
     
-        <span class="sidebar-tag-name" data-tags="面试"><span class="iconfont-archer">&#xe606;</span>面试</span>
-    
-        <span class="sidebar-tag-name" data-tags="模版"><span class="iconfont-archer">&#xe606;</span>模版</span>
+        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
     
         <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
     
         <span class="sidebar-tag-name" data-tags="引擎"><span class="iconfont-archer">&#xe606;</span>引擎</span>
-    
-        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
     
         <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
@@ -2007,17 +2191,33 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="常用语句"><span class="iconfont-archer">&#xe606;</span>常用语句</span>
     
+        <span class="sidebar-tag-name" data-tags="智力题"><span class="iconfont-archer">&#xe606;</span>智力题</span>
+    
+        <span class="sidebar-tag-name" data-tags="嵌套查询"><span class="iconfont-archer">&#xe606;</span>嵌套查询</span>
+    
+        <span class="sidebar-tag-name" data-tags="连接两个表"><span class="iconfont-archer">&#xe606;</span>连接两个表</span>
+    
+        <span class="sidebar-tag-name" data-tags="面试"><span class="iconfont-archer">&#xe606;</span>面试</span>
+    
+        <span class="sidebar-tag-name" data-tags="模版"><span class="iconfont-archer">&#xe606;</span>模版</span>
+    
+        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
+    
         <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
     
         <span class="sidebar-tag-name" data-tags="各种树"><span class="iconfont-archer">&#xe606;</span>各种树</span>
     
+        <span class="sidebar-tag-name" data-tags="缓存"><span class="iconfont-archer">&#xe606;</span>缓存</span>
+    
         <span class="sidebar-tag-name" data-tags="继承"><span class="iconfont-archer">&#xe606;</span>继承</span>
     
-        <span class="sidebar-tag-name" data-tags="缓存"><span class="iconfont-archer">&#xe606;</span>缓存</span>
+        <span class="sidebar-tag-name" data-tags="英文表达"><span class="iconfont-archer">&#xe606;</span>英文表达</span>
+    
+        <span class="sidebar-tag-name" data-tags="面向对象"><span class="iconfont-archer">&#xe606;</span>面向对象</span>
     
         <span class="sidebar-tag-name" data-tags="输入输出"><span class="iconfont-archer">&#xe606;</span>输入输出</span>
     
-        <span class="sidebar-tag-name" data-tags="面向对象"><span class="iconfont-archer">&#xe606;</span>面向对象</span>
+        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
     
         <span class="sidebar-tag-name" data-tags="多态"><span class="iconfont-archer">&#xe606;</span>多态</span>
     
@@ -2026,10 +2226,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="抽象类"><span class="iconfont-archer">&#xe606;</span>抽象类</span>
     
         <span class="sidebar-tag-name" data-tags="对象"><span class="iconfont-archer">&#xe606;</span>对象</span>
-    
-        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
-    
-        <span class="sidebar-tag-name" data-tags="英文表达"><span class="iconfont-archer">&#xe606;</span>英文表达</span>
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
@@ -2066,11 +2262,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
+        <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
     
         <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
     
-        <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
+        <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
     
         <span class="sidebar-category-name" data-categories="Leetcode"><span class="iconfont-archer">&#xe60a;</span>Leetcode</span>
     
@@ -2084,9 +2280,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
     
+        <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
+    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
+        <span class="sidebar-category-name" data-categories="智力题"><span class="iconfont-archer">&#xe60a;</span>智力题</span>
     
         <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
     
