@@ -359,6 +359,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/07/13/【内存泄漏】/">
+            
+                <span>【内存泄漏】</span>
+        </a>
+        <div class="abstract-content">
+            https://www.cnblogs.com/liushui-sky/p/7727865.html
+在类的构造函数和析构函数中没有匹配的调用new和delete函数两种情况下会出现这种内存泄露：一是在堆里创建了对象占用了内存，但是没有显示地释放对象占用的内存；二是在类的构造函数中动态的分配了内存，但是在析构函数中没有释放内存或者没有正确的释放内存
+在释放对象数组时在delete中没有使用方括号方括号是告诉编译器这个指针指向的是一个对象数组，同时也告诉编译器正确的对象地址值并调用对象的析构函数，如果没有方括号，那么这个指针就被默认为只指向一个对象，对象数组中的其他对象的析构函数就不会被调...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Cplusplus">Cplusplus</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="内存泄漏">内存泄漏</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/07/13/【数据库引擎】/">
             
                 <span>【数据库引擎】</span>
@@ -428,9 +461,9 @@ Mysql数据库的引擎InnoDBInnoDB是一个健壮的*事务型 存储引擎，�
     
         <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="easy">easy</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
     
 </div>
             
@@ -704,44 +737,10 @@ Mysql数据库的引擎InnoDBInnoDB是一个健壮的*事务型 存储引擎，�
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/06/【英文】/">
-            
-                <span>【英文】</span>
-        </a>
-        <div class="abstract-content">
-            算法
-回溯算法：Backtracking Algorithm；
-时间复杂度：Time Complexity；
-空间复杂度：space complexity;
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="英文表达">英文表达</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/2/">&#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/page/2/">&#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -2059,9 +2058,78 @@ Mysql数据库的引擎InnoDBInnoDB是一个健壮的*事务型 存储引擎，�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 70
+        Total : 71
         </div>
         <!-- search  -->
         
@@ -2074,6 +2142,11 @@ Mysql数据库的引擎InnoDBInnoDB是一个健壮的*事务型 存储引擎，�
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/2019/09/09/【数据库】删除表/">【数据库】删除表</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2152,12 +2225,12 @@ Mysql数据库的引擎InnoDBInnoDB是一个健壮的*事务型 存储引擎，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】84-柱状图中最大的矩形/">【Leetcode】84. 柱状图中最大的矩形</a>
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】85-最大矩形/">【Leetcode】85. 最大矩形</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】85-最大矩形/">【Leetcode】85. 最大矩形</a>
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】84-柱状图中最大的矩形/">【Leetcode】84. 柱状图中最大的矩形</a>
         </li>
     
     
@@ -2242,12 +2315,12 @@ Mysql数据库的引擎InnoDBInnoDB是一个健壮的*事务型 存储引擎，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【c-】/">【c#】</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/【数据库sql】/">【数据库sql】</a>
         </li>
     
     
@@ -2461,27 +2534,27 @@ Mysql数据库的引擎InnoDBInnoDB是一个健壮的*事务型 存储引擎，�
     
         <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
     
-        <span class="sidebar-tag-name" data-tags="hard"><span class="iconfont-archer">&#xe606;</span>hard</span>
+        <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
         <span class="sidebar-tag-name" data-tags="递归"><span class="iconfont-archer">&#xe606;</span>递归</span>
     
         <span class="sidebar-tag-name" data-tags="迭代"><span class="iconfont-archer">&#xe606;</span>迭代</span>
     
+        <span class="sidebar-tag-name" data-tags="hard"><span class="iconfont-archer">&#xe606;</span>hard</span>
+    
         <span class="sidebar-tag-name" data-tags="哈希"><span class="iconfont-archer">&#xe606;</span>哈希</span>
     
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
-    
-        <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
         <span class="sidebar-tag-name" data-tags="数组 - 中等 - 双指针"><span class="iconfont-archer">&#xe606;</span>数组 - 中等 - 双指针</span>
     
         <span class="sidebar-tag-name" data-tags="滑动窗口"><span class="iconfont-archer">&#xe606;</span>滑动窗口</span>
     
-        <span class="sidebar-tag-name" data-tags="困难"><span class="iconfont-archer">&#xe606;</span>困难</span>
-    
         <span class="sidebar-tag-name" data-tags="回溯"><span class="iconfont-archer">&#xe606;</span>回溯</span>
     
         <span class="sidebar-tag-name" data-tags="dfs"><span class="iconfont-archer">&#xe606;</span>dfs</span>
+    
+        <span class="sidebar-tag-name" data-tags="困难"><span class="iconfont-archer">&#xe606;</span>困难</span>
     
         <span class="sidebar-tag-name" data-tags="变换下标"><span class="iconfont-archer">&#xe606;</span>变换下标</span>
     
@@ -2501,9 +2574,9 @@ Mysql数据库的引擎InnoDBInnoDB是一个健壮的*事务型 存储引擎，�
     
         <span class="sidebar-tag-name" data-tags="assert"><span class="iconfont-archer">&#xe606;</span>assert</span>
     
-        <span class="sidebar-tag-name" data-tags="golang"><span class="iconfont-archer">&#xe606;</span>golang</span>
-    
         <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
+    
+        <span class="sidebar-tag-name" data-tags="golang"><span class="iconfont-archer">&#xe606;</span>golang</span>
     
         <span class="sidebar-tag-name" data-tags="C++面试知识点总结"><span class="iconfont-archer">&#xe606;</span>C++面试知识点总结</span>
     
@@ -2527,19 +2600,21 @@ Mysql数据库的引擎InnoDBInnoDB是一个健壮的*事务型 存储引擎，�
     
         <span class="sidebar-tag-name" data-tags="常用语句"><span class="iconfont-archer">&#xe606;</span>常用语句</span>
     
-        <span class="sidebar-tag-name" data-tags="嵌套查询"><span class="iconfont-archer">&#xe606;</span>嵌套查询</span>
-    
-        <span class="sidebar-tag-name" data-tags="连接两个表"><span class="iconfont-archer">&#xe606;</span>连接两个表</span>
+        <span class="sidebar-tag-name" data-tags="删除表"><span class="iconfont-archer">&#xe606;</span>删除表</span>
     
         <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
     
         <span class="sidebar-tag-name" data-tags="引擎"><span class="iconfont-archer">&#xe606;</span>引擎</span>
     
+        <span class="sidebar-tag-name" data-tags="嵌套查询"><span class="iconfont-archer">&#xe606;</span>嵌套查询</span>
+    
+        <span class="sidebar-tag-name" data-tags="智力题"><span class="iconfont-archer">&#xe606;</span>智力题</span>
+    
         <span class="sidebar-tag-name" data-tags="面试"><span class="iconfont-archer">&#xe606;</span>面试</span>
     
         <span class="sidebar-tag-name" data-tags="模版"><span class="iconfont-archer">&#xe606;</span>模版</span>
     
-        <span class="sidebar-tag-name" data-tags="智力题"><span class="iconfont-archer">&#xe606;</span>智力题</span>
+        <span class="sidebar-tag-name" data-tags="连接两个表"><span class="iconfont-archer">&#xe606;</span>连接两个表</span>
     
         <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
     
