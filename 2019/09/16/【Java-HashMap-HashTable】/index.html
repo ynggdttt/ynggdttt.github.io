@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>【Leetcode】67.Add Binary · 🏠</title>
+    <title>【Java-HashMap&amp;HashTable】 · 🏠</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">油腻高贵的唐怂怂的🏠</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">【Leetcode】67.Add Binary</a>
+                <a href="#" class="post-name">【Java-HashMap&HashTable】</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            【Leetcode】67.Add Binary
+            【Java-HashMap&HashTable】
             <!-- 404 -->
             
         </h1>
@@ -266,20 +266,20 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="数组">数组</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java">Java</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="easy">easy</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Map">Map</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">243</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">860</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/03/03</span>
+                    <span class="post-intro-time">2019/09/16</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -403,12 +403,17 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="题目-合并区间"><a href="#题目-合并区间" class="headerlink" title="题目 合并区间"></a>题目 合并区间</h1><p>给定两个二进制字符串，返回他们的和（用二进制表示）。</p>
-<p>输入为非空字符串且只包含数字 1 和 0。</p>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: a = &quot;11&quot;, b = &quot;1&quot;</span><br><span class="line">输出: &quot;100&quot;</span><br></pre></td></tr></table></figure></p>
-<p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: a = &quot;1010&quot;, b = &quot;1011&quot;</span><br><span class="line">输出: &quot;10101&quot;</span><br></pre></td></tr></table></figure></p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>从后向前看，如果当前的的位不存在，那么直接赋值为0，否则的话，赋值为当前的字符值，并于carry相加，这样不断的循环，直到两个字符串都遍历结束；具体看代码：<br>需要注意的是，每次取的时候要转化成int;</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addBinary</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> m = a.length() - <span class="number">1</span>, n = b.length() - <span class="number">1</span>, carry = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(m &gt;= <span class="number">0</span> || n &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> i = m &gt;= <span class="number">0</span> ? a[m--] - <span class="string">'0'</span> : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> j = n &gt;= <span class="number">0</span> ? b[n--] - <span class="string">'0'</span> : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> tem = i + j + carry;</span><br><span class="line">            res  = to_string(tem % <span class="number">2</span>) + res;</span><br><span class="line">            carry = tem / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> carry == <span class="number">1</span> ? <span class="string">"1"</span> + res : res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h1 id="HashMap-HashTable的区别"><a href="#HashMap-HashTable的区别" class="headerlink" title="HashMap HashTable的区别"></a>HashMap HashTable的区别</h1><p><a href="https://www.zhihu.com/question/20581065/answer/334969310?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=987612760565497856&amp;hb_wx_block=1" target="_blank" rel="noopener">https://www.zhihu.com/question/20581065/answer/334969310?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=987612760565497856&amp;hb_wx_block=1</a></p>
+<ol>
+<li>继承的父类不同<br>HashMap是继承自AbstractMap类，而HashTable是继承自Dictionary类。不过它们都实现了同时实现了map、Cloneable（可复制）、Serializable（可序列化）这三个接口；</li>
+<li>对外提供的接口不同<br>Hashtable比HashMap多提供了elments() 和contains() 两个方法。</li>
+<li>对Null key 和Null value的支持不同<br>Hashtable既不支持Null key也不支持Null value。<br>HashMap中，null可以作为键，这样的键只有一个；可以有一个或多个键所对应的值为null。<br>因此，在HashMap中不能由get()方法来判断HashMap中是否存在某个键， 而应该用containsKey()方法来判断。</li>
+<li>线程安全性不同<br>Hashtable是线程安全的，它的每个方法中都加入了Synchronize方法。在多线程并发的环境下，可以直接使用Hashtable，不需要自己为它的方法实现同步HashMap不是线程安全的，在多线程并发的环境下，可能会产生死锁等问题。具体的原因在下一篇文章中会详细进行分析。使用HashMap时就必须要自己增加同步处理，<br><strong>ConcurrentHashMap虽然也是线程安全的，但是它的效率比Hashtable要高好多倍。因为ConcurrentHashMap使用了分段锁，并不对整个数据进行锁定。</strong></li>
+<li>遍历方式的内部实现上不同<br>Hashtable、HashMap都使用了 Iterator。而由于历史原因，Hashtable还使用了Enumeration的方式 。</li>
+<li>初始容量大小和每次扩充容量大小的不同<br>Hashtable默认的初始大小为11，之后每次扩充，容量变为原来的2n+1。HashMap默认的初始化大小为16。之后每次扩充，容量变为原来的2倍。</li>
+<li>Hashtable和HashMap的计算hash值的方法不同<br>Hashtable直接使用对象的hashCode。hashCode是JDK根据对象的地址或者字符串或者数字算出来的int类型的数值。然后再使用除留余数发来获得最终的位置.<br>为了解决这个问题，HashMap重新根据hashcode计算hash值后，又对hash值做了一些运算来打散数据。使得取得的位置更加分散，从而减少了hash冲突。当然了，为了高效，HashMap只做了一些简单的位处理。从而不至于把使用2 的幂次方带来的效率提升给抵消掉。</li>
+</ol>
+<h1 id="ConcurrentHashMap-HashTable的区别"><a href="#ConcurrentHashMap-HashTable的区别" class="headerlink" title="ConcurrentHashMap HashTable的区别"></a>ConcurrentHashMap HashTable的区别</h1><p><a href="https://www.cnblogs.com/zx-bob-123/archive/2017/12/26/8118074.html" target="_blank" rel="noopener">https://www.cnblogs.com/zx-bob-123/archive/2017/12/26/8118074.html</a><br>ConcurrentHashMap是线程安全的HashMap的实现。<br>HashTable里使用的是synchronized关键字，这其实是对对象加锁，锁住的都是对象整体，当Hashtable的大小增加到一定的时候，性能会急剧下降，因为迭代时需要被锁定很长的时间。<br>ConcurrentHashMap引入了分割(Segment)，上面代码中的最后一行其实就可以理解为把一个大的Map拆分成N个小的HashTable，在put方法中，会根据hash(paramK.hashCode())来决定具体存放进哪个Segment，如果查看Segment的put操作，我们会发现内部使用的同步机制是基于lock操作的，这样就可以对Map的一部分（Segment）进行上锁，这样影响的只是将要放入同一个Segment的元素的put操作，保证同步的时候，锁住的不是整个Map（HashTable就是这么做的），相对于HashTable提高了多线程环境下的性能，因此HashTable已经被淘汰了。</p>
 
     </article>
     <!-- license  -->
@@ -417,17 +422,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/03/06/【Leetcode】33-Search-in-Rotated-Sorted-Array/" title="【Leetcode】33. Search in Rotated Sorted Array">
-                    <div class="nextTitle">【Leetcode】33. Search in Rotated Sorted Array</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/02/25/【Leetcode】57-Insert-Interval/" title="【Leetcode】57.Insert Interval">
-                    <div class="prevTitle">【Leetcode】57.Insert Interval</div>
+                <a href="/2019/09/16/【Java】知识点/" title="【Java】知识点">
+                    <div class="prevTitle">【Java】知识点</div>
                 </a>
             
         </li>
@@ -550,7 +550,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目-合并区间"><span class="toc-number">1.</span> <span class="toc-text">题目 合并区间</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-number">1.1.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HashMap-HashTable的区别"><span class="toc-number">1.</span> <span class="toc-text">HashMap HashTable的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ConcurrentHashMap-HashTable的区别"><span class="toc-number">2.</span> <span class="toc-text">ConcurrentHashMap HashTable的区别</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
