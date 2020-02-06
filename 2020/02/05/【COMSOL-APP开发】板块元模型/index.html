@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">18</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -403,8 +403,53 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>COMSOL软件，板块元程序，一台windows笔记本</p>
-<p>## </p>
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>COMSOL软件，板块元程序，一台windows笔记本，一个网格模型</p>
+<h2 id="知识点1-如何实现在APP中导入任意网格模型并展示"><a href="#知识点1-如何实现在APP中导入任意网格模型并展示" class="headerlink" title="知识点1:如何实现在APP中导入任意网格模型并展示"></a>知识点1:如何实现在APP中导入任意网格模型并展示</h2><ul>
+<li>目的：通过界面导入一个几何网格模型，并且能显示出来。<br>步骤一：在后台准备工作。</li>
+</ul>
+<ol>
+<li>新建三维模型,添加研究；</li>
+<li>网格处，添加导入1；</li>
+<li>点击APP开发器；点击<strong>数据访问</strong>；勾选导入1处；<br><strong><em>说明</em></strong><br>数据访问是为了保证我们想操作的组件能够顺利的移植到APP开发器处，此处具体是为了将当前的导入功能拿到前面去；<br>步骤二：在APP开发器处开发。</li>
+<li>新建表单，插入对象，文件导入；</li>
+<li>双击组建，给组件加入源，从右侧模型树上找到导入1作为源；</li>
+<li>插入按钮，图形，图形关联几何；功能是，点击按钮能够绘图展示在几何上；</li>
+<li>按钮先后在模型树上关联，<strong>构建网格，几何，绘制几何</strong>；<br><strong><em>说明</em></strong><br>a. 通过这种方式赋予按钮功能，一般如果一个按钮想实现什么功能，就将之前在后台会手动点的按钮关联过来，一个按钮可以关联多个操作；这里我们想绘制网格、几何，因此做这几种关联。此外，按钮还能关联方法。<br>b. 对于图形的源有两种情况，一种是我们这里使用的直接手动链接在后台，另一种是通过方法的方式，后面会提。</li>
+<li>点击运行App，可以对当前的功能进行测试；<br>目前已经有的功能是，导入一个网格文件，点击按钮，会将这个几何绘制出来。<br>具体方法是，点击浏览，然后选择网格文件，然后点击按钮，就实现将模型展示出来的功能了。</li>
+</ol>
+<h2 id="知识点2-怎么在界面中添加输入参数"><a href="#知识点2-怎么在界面中添加输入参数" class="headerlink" title="知识点2:怎么在界面中添加输入参数"></a>知识点2:怎么在界面中添加输入参数</h2><ol start="9">
+<li>新建参数表单命名para，包含计算方位和频点；插入输入框和文本标签（分别作为变量提示和单位说明）；<br><strong><em>说明</em></strong><br>一般情况，推荐将一组功能的参数或者图形等放在一个表单中，这样后续回顾的时候比较清楚。后续可以用在某个表单中插入子表单的方式进行整合排版。</li>
+<li>在声明处新建字符串，并将各个参数声明；<br><strong><em>说明</em></strong><br>每个输入框必须关联一个变量，可以是后台参数也可以是APP中声明的变量；</li>
+<li>将输入框和声明的变量关联起来；</li>
+<li>para表单加入到主菜单中；<br>在主表单中插入表单，并下拉选择para;<br><strong><em>说明</em></strong><br>可以勾选边框，这样比较好看，而且左上角会有个提示；</li>
+</ol>
+<h2 id="知识点3-怎么设置文件夹"><a href="#知识点3-怎么设置文件夹" class="headerlink" title="知识点3:怎么设置文件夹"></a>知识点3:怎么设置文件夹</h2><p>因为本案例中涉及到文件的存储、调用等，所以需要对文件存储位置做一个提前的声明。一般用字符串的方式；</p>
+<ol start="13">
+<li>在声明中，声明一下当前的文件夹和matlab程序存储的文件夹;<br><strong><em>必须是绝对路径，文件夹必须以\结尾。</em></strong></li>
+</ol>
+<h2 id="知识点4-方法使用–分割网格"><a href="#知识点4-方法使用–分割网格" class="headerlink" title="知识点4:方法使用–分割网格"></a>知识点4:方法使用–分割网格</h2><ul>
+<li>方法是逻辑的实现，所以要清楚自己想干嘛，比如这里，我现在的网格文件中node face是混杂的，我等一下要用的是分开的，所以这个逻辑很简单，就是需要分开node face;</li>
+</ul>
+<ol start="14">
+<li>具体操作在方法中实现，新建方法，命名，然后拷写代码；<br><strong><em>说明</em></strong><br>代码的逻辑就是把文件当成字符串读进来，然后分割，具体的需要熟能生巧；</li>
+<li>新增按钮，关联方法，可以把按钮改个名字，比如叫处理网格；</li>
+</ol>
+<h2 id="知识点5-调用matlab"><a href="#知识点5-调用matlab" class="headerlink" title="知识点5:调用matlab"></a>知识点5:调用matlab</h2><ul>
+<li>通过调用操作系统命令调用Matlab程序，已经将该过程打包成函数，每次需要时，只需要传入函数名funcname、函数绝对路径funcpath、函数参数args即可；</li>
+</ul>
+<ol start="16">
+<li>首先准备matlab程序；将传入参数设置为包theta,phi,freq；（是我们要从app传入的）。</li>
+<li>新建方法，推荐命名为UseMatlabTS，作用是进行matlab计算并新增按钮，关联此方法。<br><strong><em>说明</em></strong><br>如果你的matlab中的计算结果需要回传到APP中调用，那么请在matlab程序中将结果保存至硬盘中某个位置。<br>一般我们是用来将matlab中的计算结果在app中绘图展示的，存成txt文件即可。<h2 id="知识点6-调用matlab计算好的结果绘制曲线"><a href="#知识点6-调用matlab计算好的结果绘制曲线" class="headerlink" title="知识点6:调用matlab计算好的结果绘制曲线"></a>知识点6:调用matlab计算好的结果绘制曲线</h2></li>
+</ol>
+<ul>
+<li>后台操作步骤为，在结果处新建表格，导入数据、新建一维或二维绘图，进行绘图；</li>
+<li>针对绘制一维和二维图的情况，我已经写好打包函数，只需要修改参数，直接调用即可。</li>
+<li>为了在app上能够展示出来，需要插入图形，且关键的点在于<strong>将源选对</strong>，通过usegraphic这个函数可以实现在方法中赋予图形的源。</li>
+</ul>
+<ol start="18">
+<li>新插入图形，用来展示TS曲线；</li>
+<li>新建方法plotTS,调用PlotOne函数即可。</li>
+</ol>
 
     </article>
     <!-- license  -->
@@ -541,7 +586,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点1-如何实现在APP中导入任意网格模型并展示"><span class="toc-number">2.</span> <span class="toc-text">知识点1:如何实现在APP中导入任意网格模型并展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点2-怎么在界面中添加输入参数"><span class="toc-number">3.</span> <span class="toc-text">知识点2:怎么在界面中添加输入参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点3-怎么设置文件夹"><span class="toc-number">4.</span> <span class="toc-text">知识点3:怎么设置文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点4-方法使用–分割网格"><span class="toc-number">5.</span> <span class="toc-text">知识点4:方法使用–分割网格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点5-调用matlab"><span class="toc-number">6.</span> <span class="toc-text">知识点5:调用matlab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点6-调用matlab计算好的结果绘制曲线"><span class="toc-number">7.</span> <span class="toc-text">知识点6:调用matlab计算好的结果绘制曲线</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -554,6 +599,14 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1959,12 +2012,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/2019/09/09/【Java】单例/">【Java】单例</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/2019/09/09/【Java】volidate/">【Java】volidate</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/2019/09/09/【Java】volidate/">【Java】volidate</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/2019/09/09/【Java】单例/">【Java】单例</a>
         </li>
     
     
@@ -2054,12 +2107,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】84-柱状图中最大的矩形/">【Leetcode】84. 柱状图中最大的矩形</a>
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】85-最大矩形/">【Leetcode】85. 最大矩形</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】85-最大矩形/">【Leetcode】85. 最大矩形</a>
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/【Leetcode】84-柱状图中最大的矩形/">【Leetcode】84. 柱状图中最大的矩形</a>
         </li>
     
     
@@ -2084,17 +2137,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】63-不同路径-II/">【Leetcode】63. 不同路径 II</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】66-加一/">Leetcode】66. 加一</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】64-最小路径和/">【Leetcode】64. 最小路径和</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/【Leetcode】63-不同路径-II/">【Leetcode】63. 不同路径 II</a>
         </li>
     
     
@@ -2129,12 +2182,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】39-组合总和/">【Leetcode】39. 组合总和</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】40-组合总和-II/">【Leetcode】40. 组合总和 II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】40-组合总和-II/">【Leetcode】40. 组合总和 II</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href="/2019/07/06/【Leetcode】39-组合总和/">【Leetcode】39. 组合总和</a>
         </li>
     
     
@@ -2303,6 +2356,29 @@ top:50vh;
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/05/27/【Leetcode】5-最长回文子串/">【Leetcode】5. 最长回文子串</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
             <span class="archive-post-date">02/24</span><a class="archive-post-title" href="/2019/02/24/【Leetcode】56-Merge-Intervals/">【Leetcode】56. Merge Intervals</a>
         </li>
@@ -2322,82 +2398,66 @@ top:50vh;
             <span class="archive-post-date">02/21</span><a class="archive-post-title" href="/2019/02/21/【leetcode】36-Valid-Sudoku/">【leetcode】36. Valid Sudoku</a>
         </li>
     
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/05/27/【Leetcode】5-最长回文子串/">【Leetcode】5. 最长回文子串</a>
-        </li>
-    
     </ul></div>
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
-    
-        <span class="sidebar-tag-name" data-tags="语法"><span class="iconfont-archer">&#xe606;</span>语法</span>
-    
         <span class="sidebar-tag-name" data-tags="COMSOL 调用matlab"><span class="iconfont-archer">&#xe606;</span>COMSOL 调用matlab</span>
     
         <span class="sidebar-tag-name" data-tags="绘图"><span class="iconfont-archer">&#xe606;</span>绘图</span>
     
+        <span class="sidebar-tag-name" data-tags="语法"><span class="iconfont-archer">&#xe606;</span>语法</span>
+    
         <span class="sidebar-tag-name" data-tags="做题总结知识点"><span class="iconfont-archer">&#xe606;</span>做题总结知识点</span>
+    
+        <span class="sidebar-tag-name" data-tags="知识点梳理"><span class="iconfont-archer">&#xe606;</span>知识点梳理</span>
     
         <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
     
         <span class="sidebar-tag-name" data-tags="Map"><span class="iconfont-archer">&#xe606;</span>Map</span>
     
+        <span class="sidebar-tag-name" data-tags="volidate"><span class="iconfont-archer">&#xe606;</span>volidate</span>
+    
         <span class="sidebar-tag-name" data-tags="代码块"><span class="iconfont-archer">&#xe606;</span>代码块</span>
     
         <span class="sidebar-tag-name" data-tags="数组"><span class="iconfont-archer">&#xe606;</span>数组</span>
     
-        <span class="sidebar-tag-name" data-tags="volidate"><span class="iconfont-archer">&#xe606;</span>volidate</span>
+        <span class="sidebar-tag-name" data-tags="单例"><span class="iconfont-archer">&#xe606;</span>单例</span>
     
         <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
     
         <span class="sidebar-tag-name" data-tags="指针"><span class="iconfont-archer">&#xe606;</span>指针</span>
     
-        <span class="sidebar-tag-name" data-tags="面试知识点"><span class="iconfont-archer">&#xe606;</span>面试知识点</span>
-    
-        <span class="sidebar-tag-name" data-tags="异常处理"><span class="iconfont-archer">&#xe606;</span>异常处理</span>
-    
-        <span class="sidebar-tag-name" data-tags="单例"><span class="iconfont-archer">&#xe606;</span>单例</span>
-    
-        <span class="sidebar-tag-name" data-tags="简单"><span class="iconfont-archer">&#xe606;</span>简单</span>
-    
         <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
         <span class="sidebar-tag-name" data-tags="medium"><span class="iconfont-archer">&#xe606;</span>medium</span>
+    
+        <span class="sidebar-tag-name" data-tags="异常处理"><span class="iconfont-archer">&#xe606;</span>异常处理</span>
+    
+        <span class="sidebar-tag-name" data-tags="面试知识点"><span class="iconfont-archer">&#xe606;</span>面试知识点</span>
     
         <span class="sidebar-tag-name" data-tags="中等"><span class="iconfont-archer">&#xe606;</span>中等</span>
     
         <span class="sidebar-tag-name" data-tags="双指针"><span class="iconfont-archer">&#xe606;</span>双指针</span>
     
-        <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
-    
-        <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
+        <span class="sidebar-tag-name" data-tags="hard"><span class="iconfont-archer">&#xe606;</span>hard</span>
     
         <span class="sidebar-tag-name" data-tags="递归"><span class="iconfont-archer">&#xe606;</span>递归</span>
     
         <span class="sidebar-tag-name" data-tags="迭代"><span class="iconfont-archer">&#xe606;</span>迭代</span>
     
-        <span class="sidebar-tag-name" data-tags="哈希"><span class="iconfont-archer">&#xe606;</span>哈希</span>
+        <span class="sidebar-tag-name" data-tags="easy"><span class="iconfont-archer">&#xe606;</span>easy</span>
     
-        <span class="sidebar-tag-name" data-tags="hard"><span class="iconfont-archer">&#xe606;</span>hard</span>
+        <span class="sidebar-tag-name" data-tags="简单"><span class="iconfont-archer">&#xe606;</span>简单</span>
+    
+        <span class="sidebar-tag-name" data-tags="哈希"><span class="iconfont-archer">&#xe606;</span>哈希</span>
     
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
-        <span class="sidebar-tag-name" data-tags="数组 - 中等 - 双指针"><span class="iconfont-archer">&#xe606;</span>数组 - 中等 - 双指针</span>
+        <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
     
-        <span class="sidebar-tag-name" data-tags="滑动窗口"><span class="iconfont-archer">&#xe606;</span>滑动窗口</span>
+        <span class="sidebar-tag-name" data-tags="数组 - 中等 - 双指针"><span class="iconfont-archer">&#xe606;</span>数组 - 中等 - 双指针</span>
     
         <span class="sidebar-tag-name" data-tags="回溯"><span class="iconfont-archer">&#xe606;</span>回溯</span>
     
@@ -2405,7 +2465,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="困难"><span class="iconfont-archer">&#xe606;</span>困难</span>
     
+        <span class="sidebar-tag-name" data-tags="滑动窗口"><span class="iconfont-archer">&#xe606;</span>滑动窗口</span>
+    
         <span class="sidebar-tag-name" data-tags="变换下标"><span class="iconfont-archer">&#xe606;</span>变换下标</span>
+    
+        <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
     
         <span class="sidebar-tag-name" data-tags="递减序列"><span class="iconfont-archer">&#xe606;</span>递减序列</span>
     
@@ -2413,37 +2477,29 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="难"><span class="iconfont-archer">&#xe606;</span>难</span>
     
-        <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
-    
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
         <span class="sidebar-tag-name" data-tags="lambd"><span class="iconfont-archer">&#xe606;</span>lambd</span>
     
         <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
     
         <span class="sidebar-tag-name" data-tags="assert"><span class="iconfont-archer">&#xe606;</span>assert</span>
     
-        <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
-    
-        <span class="sidebar-tag-name" data-tags="golang"><span class="iconfont-archer">&#xe606;</span>golang</span>
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="C++面试知识点总结"><span class="iconfont-archer">&#xe606;</span>C++面试知识点总结</span>
     
         <span class="sidebar-tag-name" data-tags="static"><span class="iconfont-archer">&#xe606;</span>static</span>
     
+        <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
+    
         <span class="sidebar-tag-name" data-tags="引用"><span class="iconfont-archer">&#xe606;</span>引用</span>
+    
+        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
+    
+        <span class="sidebar-tag-name" data-tags="golang"><span class="iconfont-archer">&#xe606;</span>golang</span>
     
         <span class="sidebar-tag-name" data-tags="Cplusplus"><span class="iconfont-archer">&#xe606;</span>Cplusplus</span>
     
         <span class="sidebar-tag-name" data-tags="内存泄漏"><span class="iconfont-archer">&#xe606;</span>内存泄漏</span>
-    
-        <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
-    
-        <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
-    
-        <span class="sidebar-tag-name" data-tags="常考语句"><span class="iconfont-archer">&#xe606;</span>常考语句</span>
-    
-        <span class="sidebar-tag-name" data-tags="删除表"><span class="iconfont-archer">&#xe606;</span>删除表</span>
     
         <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
@@ -2451,39 +2507,39 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="常用语句"><span class="iconfont-archer">&#xe606;</span>常用语句</span>
     
-        <span class="sidebar-tag-name" data-tags="嵌套查询"><span class="iconfont-archer">&#xe606;</span>嵌套查询</span>
+        <span class="sidebar-tag-name" data-tags="线程"><span class="iconfont-archer">&#xe606;</span>线程</span>
+    
+        <span class="sidebar-tag-name" data-tags="进程"><span class="iconfont-archer">&#xe606;</span>进程</span>
+    
+        <span class="sidebar-tag-name" data-tags="删除表"><span class="iconfont-archer">&#xe606;</span>删除表</span>
     
         <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
     
         <span class="sidebar-tag-name" data-tags="引擎"><span class="iconfont-archer">&#xe606;</span>引擎</span>
     
-        <span class="sidebar-tag-name" data-tags="面试"><span class="iconfont-archer">&#xe606;</span>面试</span>
+        <span class="sidebar-tag-name" data-tags="嵌套查询"><span class="iconfont-archer">&#xe606;</span>嵌套查询</span>
     
-        <span class="sidebar-tag-name" data-tags="模版"><span class="iconfont-archer">&#xe606;</span>模版</span>
+        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
     
         <span class="sidebar-tag-name" data-tags="连接两个表"><span class="iconfont-archer">&#xe606;</span>连接两个表</span>
     
         <span class="sidebar-tag-name" data-tags="智力题"><span class="iconfont-archer">&#xe606;</span>智力题</span>
     
-        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
+        <span class="sidebar-tag-name" data-tags="面试"><span class="iconfont-archer">&#xe606;</span>面试</span>
     
-        <span class="sidebar-tag-name" data-tags="秋招总结"><span class="iconfont-archer">&#xe606;</span>秋招总结</span>
+        <span class="sidebar-tag-name" data-tags="继承"><span class="iconfont-archer">&#xe606;</span>继承</span>
     
         <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
     
         <span class="sidebar-tag-name" data-tags="各种树"><span class="iconfont-archer">&#xe606;</span>各种树</span>
     
-        <span class="sidebar-tag-name" data-tags="继承"><span class="iconfont-archer">&#xe606;</span>继承</span>
+        <span class="sidebar-tag-name" data-tags="模版"><span class="iconfont-archer">&#xe606;</span>模版</span>
+    
+        <span class="sidebar-tag-name" data-tags="秋招总结"><span class="iconfont-archer">&#xe606;</span>秋招总结</span>
     
         <span class="sidebar-tag-name" data-tags="缓存"><span class="iconfont-archer">&#xe606;</span>缓存</span>
     
         <span class="sidebar-tag-name" data-tags="英文表达"><span class="iconfont-archer">&#xe606;</span>英文表达</span>
-    
-        <span class="sidebar-tag-name" data-tags="覆盖率"><span class="iconfont-archer">&#xe606;</span>覆盖率</span>
-    
-        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
-    
-        <span class="sidebar-tag-name" data-tags="输入输出"><span class="iconfont-archer">&#xe606;</span>输入输出</span>
     
         <span class="sidebar-tag-name" data-tags="面向对象"><span class="iconfont-archer">&#xe606;</span>面向对象</span>
     
@@ -2495,7 +2551,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="对象"><span class="iconfont-archer">&#xe606;</span>对象</span>
     
+        <span class="sidebar-tag-name" data-tags="覆盖率"><span class="iconfont-archer">&#xe606;</span>覆盖率</span>
+    
         <span class="sidebar-tag-name" data-tags="微软产品分析"><span class="iconfont-archer">&#xe606;</span>微软产品分析</span>
+    
+        <span class="sidebar-tag-name" data-tags="c++习惯总结"><span class="iconfont-archer">&#xe606;</span>c++习惯总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="输入输出"><span class="iconfont-archer">&#xe606;</span>输入输出</span>
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
@@ -2532,33 +2594,33 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
+        <span class="sidebar-category-name" data-categories="COMSOLAPP"><span class="iconfont-archer">&#xe60a;</span>COMSOLAPP</span>
     
         <span class="sidebar-category-name" data-categories="MK"><span class="iconfont-archer">&#xe60a;</span>MK</span>
     
-        <span class="sidebar-category-name" data-categories="COMSOLAPP"><span class="iconfont-archer">&#xe60a;</span>COMSOLAPP</span>
-    
         <span class="sidebar-category-name" data-categories="Cplusplus"><span class="iconfont-archer">&#xe60a;</span>Cplusplus</span>
+    
+        <span class="sidebar-category-name" data-categories="leetcode"><span class="iconfont-archer">&#xe60a;</span>leetcode</span>
     
         <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
     
         <span class="sidebar-category-name" data-categories="Leetcode"><span class="iconfont-archer">&#xe60a;</span>Leetcode</span>
     
+        <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
+    
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
         <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
     
-        <span class="sidebar-category-name" data-categories="语言"><span class="iconfont-archer">&#xe60a;</span>语言</span>
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="C"><span class="iconfont-archer">&#xe60a;</span>C</span>
+        <span class="sidebar-category-name" data-categories="语言"><span class="iconfont-archer">&#xe60a;</span>语言</span>
     
         <span class="sidebar-category-name" data-categories="操作系统"><span class="iconfont-archer">&#xe60a;</span>操作系统</span>
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
+        <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
     
         <span class="sidebar-category-name" data-categories="智力题"><span class="iconfont-archer">&#xe60a;</span>智力题</span>
-    
-        <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
     
         <span class="sidebar-category-name" data-categories="总结"><span class="iconfont-archer">&#xe60a;</span>总结</span>
     
